@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700,800,900');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root{
+    --clr: #0093a7;
+}
+
+
+.navigation{
+    position: relative;
+    width: 60%;
+    height: 70px;
+    background: #ecececcc;
+    border: 1px solid rgba(255, 255, 255, 0.87);
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+
+}
+.navigation ul{
+    display: flex;
+    width: 350px;
+    justify-content: space-between;
+    margin: 0 auto;
+    
+}
+
+.navigation ul li{
+    position: relative;
+    list-style: none;
+    width: 70px;
+    height: 70px;
+    z-index: 1;
+ 
+}
+.navigation ul li a{
+   position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    font-weight: 500;
+
+}
+
+.navigation ul li .icon:hover{
+   color: #006572;
+   transform: translateY(-3px);
+}
+
+.navigation ul li a .icon{
+    position: relative;
+    display: block;
+    line-height: 75px;
+    font-size: 1.6em;
+    text-align: center;
+    transition: 0.5s;
+    color: var(--clr);
+}
+.navigation li:not(.active){
+    position: relative;
+    bottom: -20px;
+ }
+
+
+.navigation ul li.active a .icon{
+    transform: translateY(-12px);
+    color:black;
+   
+}
+
+.navigation ul li a .text{
+    position: absolute;
+    color: var(--clr);
+    font-weight: 400;
+    font-size:1em;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.navigation ul li.active a .text{
+    opacity: 1;
+    transform: translateY(40px);
+    color: black;
+}
+
+.indicator{
+    position: absolute;
+    top: -50%;
+    width: 70px;
+    height: 70px;
+    background: greenyellow;
+    border-radius: 50%;
+    border: 5px solid rgb(0, 0, 0);
+    transition: 0.5s;
+}
+.flecha_deco{
+    color: greenyellow;
+    font-size: 30px; /* Cambiar el tamaño del icono a 24 píxeles */
+    opacity: 0.5;
+    padding: 5px; /* Añadir un relleno de 5 píxeles alrededor del icono */
+  }
+
+
+
+.navigation ul li:nth-child(1).active ~ .indicator{
+    transform: translateX(calc(70px*0));
+}
+.navigation ul li:nth-child(2).active ~ .indicator{
+    transform: translateX(calc(70px*1));
+}
+.navigation ul li:nth-child(3).active ~ .indicator{
+    transform: translateX(calc(70px*2));
+}
+.navigation ul li:nth-child(4).active ~ .indicator{
+    transform: translateX(calc(70px*3));
+}
+.navigation ul li:nth-child(5).active ~ .indicator{
+    transform: translateX(calc(70px*4));
+}
+
+/* Oculto el nav para el responsive */
+@media (max-width: 992px) {
+    .navigation{
+        display: none;
+    }
+}

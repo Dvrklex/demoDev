@@ -11,47 +11,100 @@
       
       <!-- Styles -->
       <link href="{% static '/css/gestion.css' %}" rel="stylesheet">
+      <link href="{% static '/css/nav_btn.css' %}" rel="stylesheet">
       {% block title %}
       {% endblock %}
   </head>
 
   <body>
-      <h1 class="site-heading text-center text-white d-none d-lg-block">
-        
+        <h1 class="site-heading text-center text-white d-none d-lg-block">
           <span class="site-heading-lower">Gestión de Pedidos</span>
         </h1>
-
-
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
-      <div class="container">
-        <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="{% url 'Home' %}">Gestión de Pedidos</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav mx-auto">
-            <li class="nav-item {% if request.path == '/' %}active{% endif %} px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="{% url 'Home' %}">Inicio</a>
+      
+        <div class="navigation">
+          <span class="flecha_deco">
+            <ion-icon name="chevron-forward-outline"></ion-icon>
+          </span>
+          <ul>
+            <li class="list {% if request.path == '/tienda/' %}active{% endif %}" data-url="{% url 'Tienda' %}">
+              <a href="{% url 'Tienda' %}">
+                  <span class="icon">
+                    <ion-icon name="bag-handle-outline"></ion-icon>
+                  </span>
+                  <span class="text">Tienda</span>
+              </a>
             </li>
-            <li class="nav-item {% if request.path == '/servicios/' %}active{% endif %} px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="{% url 'Servicios' %}">Servicios</a>
+            <li class="list {% if request.path == '/servicios/' %}active{% endif %}" data-url="{% url 'Servicios' %}">
+              <a href="{% url 'Servicios' %}">
+                <span class="icon">
+                  <ion-icon name="build-outline"></ion-icon>
+                </span>
+                <span class="text">Servicios</span>
+              </a>
             </li>
-            <li class="nav-item {% if request.path == '/tienda/' %}active{% endif %} px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="{% url 'Tienda' %}">Tienda</a>
+            <li class="list {% if request.path == '/' %}active{% endif %}" data-url="{% url 'Home' %}">
+              <a href="{% url 'Home' %}">
+                  <span class="icon">
+                    <ion-icon name="home-outline"></ion-icon>
+                  </span>
+                  <span class="text">Inicio</span>
+              </a>
             </li>
-            <li class="nav-item {% if request.path == '/contacto/' %}active{% endif %} px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="{% url 'Contacto' %}">Contacto</a>
+            
+            <li class="list {% if request.path == '/contacto/' %}active{% endif %}" data-url="{% url 'Contacto' %}">
+              <a href="{% url 'Contacto' %}">
+                  <span class="icon">
+                    <ion-icon name="chatbubbles-outline"></ion-icon>
+                  </span>
+                  <span class="text">Contacto</span>
+              </a>
             </li>
-            <li class="nav-item {% if request.path == '/blog/' %}active{% endif %} px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="{% url 'Blog' %}">Blog</a>
+            <li class="list {% if request.path == '/blog/' %}active{% endif %}" data-url="{% url 'Blog' %}">
+              <a href="{% url 'Blog' %}">
+                  <span class="icon">
+                    <ion-icon name="newspaper-outline"></ion-icon>
+                  </span>
+                  <span class="text">Blog</span>
+              </a>
             </li>
-          
+            <div class="indicator"></div>
           </ul>
+          <span class="flecha_deco">
+            <ion-icon name="chevron-back-outline"></ion-icon>
+          </span>
         </div>
-      </div>
-    </nav>
+ 
+        <!-- Termino de nav desktop -->
+        <!-- Comienzo de nav mobile -->
+        <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
+          <div class="container">
+            <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="{% url 'Home' %}">Gestión de Pedidos</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+              <ul class="navbar-nav mx-auto">
+                <li class="nav-item {% if request.path == '/' %}active{% endif %} px-lg-4">
+                  <a class="nav-link text-uppercase text-expanded" href="{% url 'Home' %}">Inicio</a>
+                </li>
+                <li class="nav-item {% if request.path == '/servicios/' %}active{% endif %} px-lg-4">
+                  <a class="nav-link text-uppercase text-expanded" href="{% url 'Servicios' %}">Servicios</a>
+                </li>
+                <li class="nav-item {% if request.path == '/tienda/' %}active{% endif %} px-lg-4">
+                  <a class="nav-link text-uppercase text-expanded" href="{% url 'Tienda' %}">Tienda</a>
+                </li>
+                <li class="nav-item {% if request.path == '/contacto/' %}active{% endif %} px-lg-4">
+                  <a class="nav-link text-uppercase text-expanded" href="{% url 'Contacto' %}">Contacto</a>
+                </li>
+                <li class="nav-item {% if request.path == '/blog/' %}active{% endif %} px-lg-4">
+                  <a class="nav-link text-uppercase text-expanded" href="{% url 'Blog' %}">Blog</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
 
+        <!-- Termino de nav mobile -->
     <!-- Contentido cambiante  -->
     {% block content %}
     {% endblock %}
@@ -80,17 +133,35 @@
             </a>
         </p>
           <p class="m-0 mbt">
-            <a href="sample.html" class="link">Política de privacidad</a> ·
-            <a href="sample.html" class="link">Aviso legal</a> ·
-            <a href="sample.html" class="link">Cookies</a>
+            <!-- Logo -->
+            <a href="{% url 'Home' %}" class="link logos">
+              <img src="{% static '/img/logo4.png' %}" alt="Logo" class="logo1">
+              <img src="{% static '/img/NAME.png' %}" alt="Logo" class="logo2">
+            </a>
+            <a href="" class="link docs">Política de privacidad</a> ·
+            <a href="" class="link docs">Aviso legal</a> ·
+            <a href="" class="link docs">Cookies</a>
       </p>
-          <p class="m-0 mbt1">&copy; Dvrklex 2023</p>
+          
         </div>
     </footer>
-
+      <!-- My script -->
+      <script src="{% static '/js/nav_script.js' %}"></script>
+          
+      
       <!-- Bootstrap -->
       <script src="{% static '/vendor/jquery/jquery.min.js' %}"></script>
       <script src="{% static '/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+      <!-- ionicons -->
+      <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+      <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+      {% block javascript %}
+  <script>
+    const viewName = "{{ view_name }}";
+  </script>
+{% endblock %}
+
 
   </body>
 

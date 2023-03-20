@@ -80,25 +80,31 @@ p {
 }
 
 #mainNav {
-  background-color:#14213D;
-  font-family: 'Raleway';
+  display: none;
 }
 
-#mainNav .navbar-brand {
-  color: #ffffff;
+@media (max-width: 992px) {
+  #mainNav {
+  display: none;
 }
-
-#mainNav .navbar-nav .nav-item .nav-link {
-  color: rgba(255, 255, 255, 0.7);
-  font-weight: 800;
-}
-
-#mainNav .navbar-nav .nav-item.active .nav-link {
-  color: #ffffff;
-  text-decoration: underline;
-}
-
-@media (min-width: 992px) {
+  #mainNav {
+    background-color:#14213D;
+    font-family: 'Raleway';
+  }
+  
+  #mainNav .navbar-brand {
+    color: #ffffff;
+  }
+  
+  #mainNav .navbar-nav .nav-item .nav-link {
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 800;
+  }
+  
+  #mainNav .navbar-nav .nav-item.active .nav-link {
+    color: #ffffff;
+    text-decoration: underline;
+  }
   #mainNav .navbar-nav .nav-item .nav-link {
     font-size: 0.9rem;
   }
@@ -155,7 +161,7 @@ p {
 .cta {
   padding-top: 5rem;
   padding-bottom: 5rem;
-  background-color: rgba(255, 255, 255, 0.486);
+  /* background-color: rgba(255, 255, 255, 0.486); */
 }
 
 .cta .cta-inner {
@@ -175,8 +181,45 @@ p {
   left: -0.5rem;
   right: -0.5rem;
   border: 0.25rem solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0px 0px 10px 1px #fff;
+  animation: breathe 1s ease-in-out infinite;
+  
 }
-
+@keyframes breathe {
+  0% {
+    box-shadow: 0px 0px 2px 1px #00e6e6;
+  }
+  10% {
+    box-shadow: 0px 0px 4px 1px #00e6e6;
+  }
+  20% {
+    box-shadow: 0px 0px 6px 1px #00e6e6;
+  }
+  30% {
+    box-shadow: 0px 0px 8px 1px #00e6e6;
+  }
+  40% {
+    box-shadow: 0px 0px 10px 1px #00e6e6;
+  }
+  50% {
+    box-shadow: 0px 0px 12px 1px #00e6e6;
+  }
+  60% {
+    box-shadow: 0px 0px 10px 1px #00e6e6;
+  }
+  70% {
+    box-shadow: 0px 0px 8px 1px #00e6e6;
+  }
+  80% {
+    box-shadow: 0px 0px 6px 1px #00e6e6;
+  }
+  90% {
+    box-shadow: 0px 0px 4px 1px #00e6e6;
+  }
+  100% {
+    box-shadow: 0px 0px 2px 1px #00e6e6;
+  }
+}
 .cta .cta-innerv {
   position: relative;
   padding: 3rem;
@@ -229,7 +272,9 @@ p {
 }
 
 .footer {
-   background-color: #14213D;
+  background-color: #14213D;
+  
+
 }
 
 
@@ -276,4 +321,32 @@ ul.errorlist{
   padding-top: .75rem;
   font-style: italic;
   color: red;
+}
+
+.logos{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+.logo1{
+  margin-top: -115px;
+  /* padding-top: 2rem; */
+  max-width: 250px;
+  margin-bottom: -50px;
+ 
+  height: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+.logo2{
+  margin-top: -100px;
+  max-width: 200px;
+  height: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+.docs{
+  margin-bottom: -90px;
 }
