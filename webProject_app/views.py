@@ -1,16 +1,12 @@
 from django.shortcuts import render, redirect, HttpResponse
 
+
 # Vista Home
 
 def home(request):
     view_name= 'Home' #Esto es para que el JavaScript de la vista home.html pueda identificar la vista en la que se encuentra, y así poder cambiar el color del botón de la barra de navegación.
     return render(request, 'webProject_app/home.html',{'view_name': view_name})
 
-# Vista Servicios
-
-def servicios(request):
-    view_name= 'Servicios'
-    return render(request, 'webProject_app/servicios.html',{'view_name': view_name})
 
 # Vista Tienda
 

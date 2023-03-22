@@ -137,3 +137,8 @@
         display: none;
     }
 }
+
+
+*::-webkit-scrollbar-thumb:active {
+    background-color: #00BFE5;
+}

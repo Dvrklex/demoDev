@@ -1,0 +1,19 @@
+{% extends '../webProject_app/base.html' %} <!-- hereda de la plantilla base.html-->
+
+{% load static %}
+
+
+{% block content %}
+    <div class="servicios_container">
+        {% for servicio in servicios %}
+        <div class="card">
+            <img src="{{ servicio.imagen.url }}" alt="{{ servicio.titulo }}" class="card_img">
+            <div class="card_body">
+                <h2 class="card_title">{{ servicio.titulo }}</h2>
+                <p class="card_content">{{ servicio.contenido }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+  
+{% endblock %}

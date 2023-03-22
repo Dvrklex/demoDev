@@ -6,6 +6,41 @@ body {
   background-size: cover;
 }
 
+/* Scroll bar */
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #054C75 #A1A1A1;
+}
+
+/* Chrome, Edge and Safari */
+*::-webkit-scrollbar {
+  width: 10px;
+  width: 10px;
+}
+*::-webkit-scrollbar-track {
+  border-radius: 4px;
+  background-color: #A1A1A1;
+}
+
+*::-webkit-scrollbar-track:hover {
+  background-color: #BCBCBC;  
+}
+
+*::-webkit-scrollbar-track:active {
+  background-color: #B8C0C2;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  background-color: #054C75;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #0093BF;
+}
+
+
 h1,
 h2,
 h3,
@@ -133,7 +168,7 @@ p {
 
 @media (min-width: 992px) {
   .intro .intro-img {
-    width: 75%;
+    width: 65%;
     float: left;
   }
   .intro .intro-text {
