@@ -1,0 +1,82 @@
+/*Index - Publicaciones*/
+.posts_container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+/* Posteos que NO contienen imagenes */
+
+.post_simple{
+    width: 30%;
+    height: auto;
+    margin: 15px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    overflow: hidden;
+    position: relative;
+    padding: 12px;
+}
+
+.post_simple h2{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.post_simple p{
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.post_simple h3{
+    color: gray;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+}
+/* Posteos que contienen imagenes */
+.post_w_img{
+    width: 50%;
+    display: flex;
+    height: 300px;
+    margin: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    overflow: hidden;
+    position: relative;
+}
+
+.post_header{
+    width: auto;
+    height: auto;
+    background-color: #000;
+    position: relative;
+    overflow: hidden;
+}
+.post_card_body{
+    padding: 10px;
+}
+.post_card_title{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.post_card_content{
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+.post_card_body h3{
+    color: gray;
+    font-size: 14px;
+    font-weight: 400;
+    /* margin-bottom: 10px; */
+    text-align: center;
+}

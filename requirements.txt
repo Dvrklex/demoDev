@@ -2,3 +2,4 @@ Pillow
 Django
 Flask
 Pyramid
+psycopg2

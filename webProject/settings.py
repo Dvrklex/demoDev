@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'webProject_app',
     'servicios',
+    'blog',
 ]
 
 MIDDLEWARE = [
@@ -122,6 +123,7 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     './webProject_app/static/', 
     './servicios/static/', 
+    './blog/static/' 
     
 ]
 MEDIA_URL = '/media/'

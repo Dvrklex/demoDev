@@ -1,0 +1,30 @@
+{% extends '../webProject_app/base.html' %} <!-- hereda de la plantilla base.html-->
+
+
+{% load static %}
+{% block content %}
+    <div class="posts_container">
+        {% for post in posts %}
+            {% if post.imagen %}
+                <div class="post_w_img">
+                    <div class="post_header">
+                            <img src="{{ post.imagen.url }}" alt="{{ post.titulo }}" class="card_img">
+                    </div>
+                    <div class="post_card_body">
+                        <h2 class="post_card_title">{{ post.titulo }}</h2>
+                        <p class="post_card_content">{{ post.contenido }}</p>
+                        <h3>Creado por {{ post.autor }}</h3>
+                    </div>
+                </div>
+            {% else %}
+                    <div class="post_simple">
+                            <h2 class="post_simple_title">{{ post.titulo }}</h2>
+                            <p class="post_simple_content">{{ post.contenido }}</p>
+                            <h3>Creado por {{ post.autor }}</h3>
+                    </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+
+
+{% endblock %}
