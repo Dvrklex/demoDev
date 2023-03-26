@@ -10,9 +10,22 @@ def blog(request):
     posts = Post.objects.all() #importamos todos los objetos dentro de la clase Servicio
     return render(request, 'blog/blog.html',{'view_name': view_name, 'posts': posts})
 
+# Vista Categoria filtrada
 def categoria(request, categoria_id):
     view_name = 'Categoria'
     categoria = Categoria.objects.get(id=categoria_id)
     posts = Post.objects.filter(categoria=categoria)
-    # print('Este es el post de la categoria: ', post)
-    return render(request, 'blog/categoria.html',{'view_name': view_name, 'categoria': categoria, 'posts': posts})
+    categorias = Categoria.objects.all()
+    return render(request, 'blog/categoria.html', {
+        'view_name': view_name,
+        'categoria': categoria,
+        'posts': posts,
+        'categorias': categorias,
+        'categoria_id': categoria_id # Pasar el categoria_id a la plantilla
+    })
+    
+# Vista Buscador
+def buscar(request):
+    query = request.GET.get('search')
+    results = Post.objects.filter(titulo__icontains=query) | Post.objects.filter(contenido__icontains=query)
+    return render(request, 'blog/busqueda.html', {'results': results})

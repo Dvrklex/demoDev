@@ -1,0 +1,65 @@
+{% extends '../webProject_app/base.html' %}
+{% load static %}
+{% block content %}
+    <div class="sub_menu">
+        <div class="dropdown">
+            <select onchange="location = this.value;">
+                <option>Filtrar categorías...</option>
+                {% for post in posts %}
+                {% for categorias in post.categoria.all %}
+                <option value="{% url 'categoria' categorias.id %}">{{ categorias.nombre }}</option>
+                {% endfor %}
+                {% endfor %}
+            </select>
+        </div>
+        <form method="get" action="{% url 'buscar' %}">
+            <div class="search_bar">
+                <input type="search" name="search" id="search" placeholder="Buscar...">
+            </div>
+        </form>
+    </div>
+        
+    <h1 class="resultados_busqueda">Resultados de la búsqueda</h1>
+    {% if results %}
+        <div class="posts_container">
+            {% for post in results %}
+                {% if post.imagen %}
+                    <div class="post_w_img">
+                        <div class="post_header">
+                            <img src="{{ post.imagen.url }}" alt="{{ post.titulo }}" class="card_img">
+                        </div>
+                        <div class="post_card_body">
+                            <h2 class="post_card_title">{{ post.titulo }}</h2>
+                            <p class="post_card_content">{{ post.contenido }}</p>
+                            <h3>Creado por {{ post.autor }}</h3>
+                            {% for categorias in post.categoria.all %}
+                                <span class="post_card_category">{{ categorias.nombre }}</span>	
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% else %}
+                    <div class="post_w_img">
+                        <div class="post_header">
+                                <img src="{% static 'blog/img/post_sin_img.jpg' %}" alt="{{ post.titulo }}" class="card_img">
+                        </div>
+                        <div class="post_card_body">
+                            <h2 class="post_card_title">{{ post.titulo }}</h2>
+                            <p class="post_card_content">{{ post.contenido }}</p>
+                            <h3>Creado por {{ post.autor }}</h3>
+                            {% for categorias in post.categoria.all %}
+                                <span class="post_card_category">{{ categorias.nombre }}</span>	
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+ 
+    {% else %}
+        <div class="no_results_container">
+            <img src = "{% static 'blog/img/no_results.jpg' %}" alt="No se han encontrado resultados" class="no_results">
+            <h3>No se han encontraron resultados.</h3>
+            <p>Prueba con otras palabras claves.</p>
+        </div>
+    {% endif %}
+{% endblock %}

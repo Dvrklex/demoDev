@@ -21,7 +21,7 @@
 
   <body>
         <h1 class="site-heading text-center text-white d-none d-lg-block">
-          <span class="site-heading-lower">Art & Accs</span>
+          <span class="site-heading-lower">Demo Dev</span>
         </h1>
       
         <div class="navigation">
@@ -62,7 +62,7 @@
                   <span class="text">Contacto</span>
               </a>
             </li>
-            <li class="list {% if request.path == '/blog/' %}active{% endif %}" data-url="{% url 'Blog' %}">
+            <li class="list {% if request.path|slice:':6' == '/blog/' %}active{% endif %}" data-url="{% url 'Blog' %}">
               <a href="{% url 'Blog' %}">
                   <span class="icon">
                     <ion-icon name="newspaper-outline"></ion-icon>
@@ -153,8 +153,8 @@
           
       
       <!-- Bootstrap -->
-      <script src="{% static '/vendor/jquery/jquery.min.js' %}"></script>
-      <script src="{% static '/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+      <script src="{% static 'webProject_app/vendor/jquery/jquery.min.js' %}"></script>
+      <script src="{% static 'webProject_app/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
       <!-- ionicons -->
       <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
       <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>

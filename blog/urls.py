@@ -6,7 +6,8 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('', views.blog, name='Blog'),
-    path('categoria/<int:categoria_id>/', views.categoria, name='categoria')
+    path('categoria/<int:categoria_id>/', views.categoria, name='categoria'),
+   path('busqueda/', views.buscar, name='buscar'),
 ]
 
 #Leer las imagenes de la carpeta media en el navegador

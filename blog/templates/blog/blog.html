@@ -3,23 +3,27 @@
 
 {% load static %}
 {% block content %}
-    <form method="get" class="sub_menu">
+    <div class="sub_menu">
         <div class="dropdown">
-            <select name="categorias" id="categorias">
-                <option value="">Filtrar categoría</option>
+            <select onchange="location = this.value;">
+                <option>Filtrar categorías...</option>
                 {% for post in posts %}
-                    {% for categorias in post.categoria.all %}
-                        <option value="{{ categoria.id }}">{{ categorias }}</option>
-                    {% endfor %}
+                {% for categorias in post.categoria.all %}
+                <option value="{% url 'categoria' categorias.id %}">{{ categorias.nombre }}</option>
+                {% endfor %}
                 {% endfor %}
             </select>
-            <button type="submit">Filtrar</button>
         </div>
-        <div class="search_bar">
-        <input type="search" name="search" id="search" placeholder="Buscar...">
-        </div>
-    </form>
-  
+        <form method="get" action="{% url 'buscar' %}">
+            <div class="search_bar">
+                <input type="search" name="search" id="search" placeholder="Buscar...">
+            </div>
+        </form>
+    </div>
+        
+
+      
+        
     <!-- Posteos -->
     <div class="posts_container">
         {% for post in posts %}
@@ -32,7 +36,9 @@
                         <h2 class="post_card_title">{{ post.titulo }}</h2>
                         <p class="post_card_content">{{ post.contenido }}</p>
                         <h3>Creado por {{ post.autor }}</h3>
-                        <span class="post_card_category">Software - Hardware</span>	
+                        {% for categorias in post.categoria.all %}
+                            <span class="post_card_category">{{ categorias.nombre }}</span>	
+                        {% endfor %}
                     </div>
                 </div>
             {% else %}
@@ -44,14 +50,12 @@
                         <h2 class="post_card_title">{{ post.titulo }}</h2>
                         <p class="post_card_content">{{ post.contenido }}</p>
                         <h3>Creado por {{ post.autor }}</h3>
-                        <span class="post_card_category">Software - Hardware</span>	
+                        {% for categorias in post.categoria.all %}
+                            <span class="post_card_category">{{ categorias.nombre }}</span>	
+                        {% endfor %}
                     </div>
                 </div>
-                    <!-- <div class="post_simple">
-                            <h2 class="post_simple_title">{{ post.titulo }}</h2>
-                            <p class="post_simple_content">{{ post.contenido }}</p>
-                            <h3>Creado por {{ post.autor }}</h3>
-                    </div> -->
+                   
             {% endif %}
         {% endfor %}
     </div>
