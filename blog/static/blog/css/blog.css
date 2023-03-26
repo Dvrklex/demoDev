@@ -51,7 +51,9 @@ filter: brightness(100%);
     margin: 15px;
     
 }
-
+.dropdown{
+    margin-top: 7px;
+}
 
 .sub_menu select {
     background-color: transparent;
@@ -101,6 +103,18 @@ select option:hover {
     background-color: #fff;
     color: #000;
 }
+/* Titulo de Resultado de Filtro */
+.titulo_cat_filtro{
+    margin: 15px;
+    color: #e7e7e7;
+    font-size:32px;
+    line-height: 1.5;
+    letter-spacing: 5px;
+    word-spacing: 10px;
+    text-align: center;
+    text-decoration: underline;
+    text-transform: uppercase;
+}
 
 /*Index - Publicaciones*/
 .posts_container{
@@ -133,6 +147,20 @@ select option:hover {
 }
 .post_card_body{
     padding: 10px;
+}
+.post_card_body .postcategory{
+    text-decoration: none;
+}
+.post_card_body .viewpost{
+    text-decoration: none;
+    color: #000;
+}
+.post_card_body .viewpost:hover{
+    color: #1d1d1d;
+    /* animation */
+    text-decoration: underline;
+    transition: 0.5s all ease-in-out;
+
 }
 .post_card_title{
     font-size: 20px;

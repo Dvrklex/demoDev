@@ -28,4 +28,10 @@ def categoria(request, categoria_id):
 def buscar(request):
     query = request.GET.get('search')
     results = Post.objects.filter(titulo__icontains=query) | Post.objects.filter(contenido__icontains=query)
-    return render(request, 'blog/busqueda.html', {'results': results})
+    categorias = Categoria.objects.all()
+    return render(request, 'blog/busqueda.html', {'results': results, 'categorias': categorias})
+
+def view_post(request, post_id):
+    post = Post.objects.get(id=post_id)
+    categorias = Categoria.objects.all()
+    return render(request, 'blog/post.html', {'post': post,'categorias': categorias})

@@ -8,9 +8,9 @@
             <select onchange="location = this.value;">
                 <option>Filtrar categorías...</option>
                 {% for post in posts %}
-                {% for categorias in post.categoria.all %}
-                <option value="{% url 'categoria' categorias.id %}">{{ categorias.nombre }}</option>
-                {% endfor %}
+                    {% for categorias in post.categoria.all %}
+                        <option value="{% url 'categoria' categorias.id %}">{{ categorias.nombre }}</option>
+                    {% endfor %}
                 {% endfor %}
             </select>
         </div>
@@ -33,11 +33,11 @@
                             <img src="{{ post.imagen.url }}" alt="{{ post.titulo }}" class="card_img">
                     </div>
                     <div class="post_card_body">
-                        <h2 class="post_card_title">{{ post.titulo }}</h2>
+                        <a href="{% url 'view_post' post.id %}"class='viewpost'><h2 class="post_card_title">{{ post.titulo }}</h2></a>
                         <p class="post_card_content">{{ post.contenido }}</p>
                         <h3>Creado por {{ post.autor }}</h3>
                         {% for categorias in post.categoria.all %}
-                            <span class="post_card_category">{{ categorias.nombre }}</span>	
+                            <a href="{% url 'categoria' categorias.id %}" class="postcategory"><span class="post_card_category">{{ categorias.nombre }}</span></a>
                         {% endfor %}
                     </div>
                 </div>
@@ -47,11 +47,12 @@
                             <img src="{% static 'blog/img/post_sin_img.jpg' %}" alt="{{ post.titulo }}" class="card_img">
                     </div>
                     <div class="post_card_body">
-                        <h2 class="post_card_title">{{ post.titulo }}</h2>
+                        <a href="{% url 'view_post' post.id %}"class='viewpost'><h2 class="post_card_title">{{ post.titulo }}</h2></a>
                         <p class="post_card_content">{{ post.contenido }}</p>
                         <h3>Creado por {{ post.autor }}</h3>
                         {% for categorias in post.categoria.all %}
-                            <span class="post_card_category">{{ categorias.nombre }}</span>	
+                        <a href="{% url 'categoria' categorias.id %}" class="postcategory"><span class="post_card_category">{{ categorias.nombre }}</span></a>
+                            <!-- <span class="post_card_category">{{ categorias.nombre }}</span>	 -->
                         {% endfor %}
                     </div>
                 </div>
