@@ -25,11 +25,14 @@
     </div>
     <!-- Ver posteo completo -->
     <div class="post_index">
-        <div class="post_header">
-            <img src="{{ post.imagen.url }}" alt="{{ post.titulo }}" class="card_img">
+        <div class="post_index_header">
+            <img src="{% static 'blog/img/post_header_index.jpg' %}" alt="imagen_post">
         </div>
-        <div class="post_content">
-
+        <div class="post_index_content">
+            <h3>{{post.titulo}}</h3>
+            <span>Creado por {{post.autor}} - {{ post.created|date:"d M Y" }}</span>
+            <p>{{post.contenido}}</p>
+            <span class="last_updated">Última actualización {{ post.updated|date:"d M Y" }}</span>
         </div>
 
     </div>

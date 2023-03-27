@@ -34,7 +34,7 @@
                         </div>
                         <div class="post_card_body">
                             <a href="{% url 'view_post' post.id %}"class='viewpost'><h2 class="post_card_title">{{ post.titulo }}</h2></a>
-                            <p class="post_card_content">{{ post.contenido }}</p>
+                            <p class="post_card_content">{{ post.contenido|truncatechars:100 }}</p>
                             <h3>Creado por {{ post.autor }}</h3>
                             {% for categorias in post.categoria.all %}
                             <a href="{% url 'categoria' categorias.id %}" class="postcategory"><span class="post_card_category">{{ categorias.nombre }}</span></a>                            {% endfor %}
@@ -47,7 +47,7 @@
                         </div>
                         <div class="post_card_body">
                             <a href="{% url 'view_post' post.id %}"class='viewpost'><h2 class="post_card_title">{{ post.titulo }}</h2></a>
-                            <p class="post_card_content">{{ post.contenido }}</p>
+                            <p class="post_card_content">{{ post.contenido|truncatechars:100 }}</p>
                             <h3>Creado por {{ post.autor }}</h3>
                             {% for categorias in post.categoria.all %}
                             <a href="{% url 'categoria' categorias.id %}" class="postcategory"><span class="post_card_category">{{ categorias.nombre }}</span></a>

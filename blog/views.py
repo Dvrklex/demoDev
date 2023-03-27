@@ -34,4 +34,4 @@ def buscar(request):
 def view_post(request, post_id):
     post = Post.objects.get(id=post_id)
     categorias = Categoria.objects.all()
-    return render(request, 'blog/post.html', {'post': post,'categorias': categorias})
+    return render(request, 'blog/post.html', {'post': post,'post_id':post_id,'categorias': categorias})
