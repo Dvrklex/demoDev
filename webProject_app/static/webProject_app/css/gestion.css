@@ -58,6 +58,7 @@ p {
   color: rgba(255, 255, 255, 0.3);
 }
 
+/* Titulo principal */
 .site-heading {
   margin-top: 5rem;
   margin-bottom: 5rem;
@@ -110,58 +111,12 @@ p {
   margin-top:.5rem;
 }
 
-.bg-faded {
-  background-color: rgba(255, 255, 255, 0.85);
-}
 
-#mainNav {
-  display: none;
-}
+ 
 
-@media (max-width: 992px) {
-  #mainNav {
-  display: none;
-}
-  #mainNav {
-    background-color:#14213D;
-    font-family: 'Raleway';
-  }
-  
-  #mainNav .navbar-brand {
-    color: #ffffff;
-  }
-  
-  #mainNav .navbar-nav .nav-item .nav-link {
-    color: rgba(255, 255, 255, 0.7);
-    font-weight: 800;
-  }
-  
-  #mainNav .navbar-nav .nav-item.active .nav-link {
-    color: #ffffff;
-    text-decoration: underline;
-  }
-  #mainNav .navbar-nav .nav-item .nav-link {
-    font-size: 0.9rem;
-  }
-  #mainNav .navbar-nav .nav-item .nav-link:hover {
-    color: rgba(255, 255, 255, 0.4);
-    text-decoration: underline;
-  }
-  #mainNav .navbar-nav .nav-item.active .nav-link:hover {
-    color: #ffffff;
-    text-decoration: underline;
-  }
-}
-
-.btn-xl {
-  font-weight: 700;
-  font-size: 0.8rem;
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
-}
-
+ 
+ 
+/* Introduccions */
 .intro {
   position: relative;
 }
@@ -193,6 +148,8 @@ p {
   }
 }
 
+
+/* Mensje "Compromiso Total" */
 .cta {
   padding-top: 5rem;
   padding-bottom: 5rem;
@@ -262,62 +219,17 @@ p {
   background-color: rgba(255, 255, 255, 0.151);
 }
 
-@media (min-width: 992px) {
-  .about-heading .about-heading-img {
-    position: relative;
-    z-index: 0;
-  }
-  .about-heading .about-heading-content {
-    margin-top: -5rem;
-    position: relative;
-    z-index: 1;
-  }
-}
-
-@media (min-width: 992px) {
-  .product-item .product-item-title {
-    position: relative;
-    z-index: 1;
-    margin-bottom: -3rem;
-  }
-  .product-item .product-item-img {
-    position: relative;
-    z-index: 0;
-    max-width: 60vw;
-  }
-  .product-item .product-item-description {
-    position: relative;
-    z-index: 1;
-    margin-top: -3rem;
-    max-width: 50vw;
-  }
-}
 
 
 
-@media (min-width: 992px) {
-  .list-hours {
-    width: 50%;
-    font-size: 1.1rem;
-  }
-}
 
-.address strong {
-  font-size: 1.2rem;
-}
+
 
 .footer {
   background-color: #14213D;
   
 
 }
-
-
-
-.btn {
-  box-shadow: 0px 3px 3px 0px rgba(33, 37, 41, 0.1);
-}
-
 
 
 .font-weight-light {
@@ -383,3 +295,4 @@ ul.errorlist{
 .docs{
   margin-bottom: -90px;
 }
+ 

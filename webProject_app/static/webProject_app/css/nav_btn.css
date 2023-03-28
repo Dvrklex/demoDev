@@ -130,15 +130,7 @@
 .navigation ul li:nth-child(5).active ~ .indicator{
     transform: translateX(calc(70px*4));
 }
-
-/* Oculto el nav para el responsive */
-@media (max-width: 992px) {
-    .navigation{
-        display: none;
-    }
-}
-
-
+  
 *::-webkit-scrollbar-thumb:active {
     background-color: #00BFE5;
 }

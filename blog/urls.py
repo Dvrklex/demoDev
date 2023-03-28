@@ -9,6 +9,7 @@ urlpatterns = [
     path('categoria/<int:categoria_id>/', views.categoria, name='categoria'),
     path('busqueda/', views.buscar, name='buscar'),
     path('post/<int:post_id>/', views.view_post, name='view_post'),
+    # path('ordenar/<int:order>/', views.ordenar, name='ordenar')
 ]
 
 #Leer las imagenes de la carpeta media en el navegador

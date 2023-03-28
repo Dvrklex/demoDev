@@ -1,59 +1,22 @@
-/* Search bar */
-.search_bar {
-width: 30%;
-height: auto;
-margin: 20px;
-display: flex;
-justify-content: center;
-align-items: center;
 
-
-}
-
-.search_bar input[type=search] {
-width: 160px;
-padding: 8px 20px 8px 45px;
-border: #fff solid 2px;
-font-size: 18px;
-border-radius: 25px;
-background-position: 2% 50%;
-background-repeat: no-repeat;
-background-size: 30px;
-background-image: url('search.svg');
-background-color: transparent;
-transition: 0.5s all ease-in-out;
-filter: brightness(170%);
-}
-
-.search_bar input[type=search]:focus,
-.search_bar input[type=search]:not(:placeholder-shown) {
-width: 350px;
-background-color: #fff;
-filter: brightness(100%);
-}
-
-  /* Form */
+/* Form */
 .sub_menu {
-    display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: repeat(2, 1fr);
-    /* gap: 8px; */
-    margin-top: 15px;
-    margin-left: 400px;
-    justify-content: space-evenly;
-    align-content: center;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
+.sub_menu > * {
+    margin: 0 30px;
+}
 .sub_menu label {
     color: #fff;
     font-size: 18px;
     margin: 15px;
     
 }
-.dropdown{
+/* .dropdown{
     margin-top: 7px;
-}
+} */
 
 .sub_menu select {
     background-color: transparent;
@@ -84,7 +47,7 @@ filter: brightness(100%);
 }
 select option:hover {
     background-color: #f2f2f2; /* color de fondo para la opción cuando se hace hover */
-  }
+}
 
 
 
@@ -102,6 +65,39 @@ select option:hover {
 .sub_menu button[type="submit"]:hover {
     background-color: #fff;
     color: #000;
+}
+/* Search bar */
+.search_bar {
+width: 350px;
+height: auto;
+/* margin: 20px; */
+display: flex;
+justify-content: center;
+align-items: center;
+
+
+}
+
+.search_bar input[type=search] {
+width: 160px;
+padding: 8px 20px 8px 45px;
+border: #fff solid 2px;
+font-size: 18px;
+border-radius: 25px;
+background-position: 2% 50%;
+background-repeat: no-repeat;
+background-size: 30px;
+background-image: url('search.svg');
+background-color: transparent;
+transition: 0.5s all ease-in-out;
+filter: brightness(170%);
+}
+
+.search_bar input[type=search]:focus,
+.search_bar input[type=search]:not(:placeholder-shown) {
+width: 350px;
+background-color: #fff;
+filter: brightness(100%);
 }
 /* Titulo de Resultado de Filtro */
 .titulo_cat_filtro{

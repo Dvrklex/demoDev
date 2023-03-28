@@ -1,12 +1,14 @@
 from django.shortcuts import render, redirect, HttpResponse
-
+from blog.models import Post
 
 # Vista Home
 
 def home(request):
     view_name= 'Home' #Esto es para que el JavaScript de la vista home.html pueda identificar la vista en la que se encuentra, y así poder cambiar el color del botón de la barra de navegación.
-    return render(request, 'webProject_app/home.html',{'view_name': view_name})
-
+    latest_posts = Post.objects.all().order_by('-created')[:6]
+    for post in latest_posts:
+        print(post.titulo)
+    return render(request, 'webProject_app/home.html',{'view_name': view_name,"latest_posts":latest_posts})
 
 # Vista Tienda
 
