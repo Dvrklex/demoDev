@@ -5,7 +5,7 @@
     <div class="sub_menu">
         <div class="dropdown">
             <select onchange="location = this.value;">
-                <option value="">Filtrar categorías...</option>
+                <!-- <option value="">Filtrar categorías...</option> -->
                 <option value="{% url 'Blog' %}">Ver todas</option>
                 {% for categoria in categorias %}
                     {% if categoria.id == categoria_id %}

@@ -7,7 +7,7 @@ from blog.models import Post, Categoria
 
 def blog(request):
     view_name = 'Blog'
-    posts = Post.objects.all() #importamos todos los objetos dentro de la clase Servicio
+    posts = Post.objects.all() 
     return render(request, 'blog/blog.html',{'view_name': view_name, 'posts': posts})
 
 # Vista Categoria filtrada
