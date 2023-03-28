@@ -8,7 +8,8 @@ from blog.models import Post, Categoria
 def blog(request):
     view_name = 'Blog'
     posts = Post.objects.all().order_by('-created')
-    return render(request, 'blog/blog.html',{'view_name': view_name, 'posts': posts})
+    categorias = Categoria.objects.all()
+    return render(request, 'blog/blog.html',{'view_name': view_name, 'posts': posts, 'categorias': categorias})
 
 # Vista Categoria filtrada
 def categoria(request, categoria_id):

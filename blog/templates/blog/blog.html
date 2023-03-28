@@ -7,14 +7,18 @@
         <div class="dropdown">
             <select onchange="location = this.value;">
                 <option>Filtrar categorías...</option>
-                {% for post in posts %}
-                    {% for categorias in post.categoria.all %}
-                        <option value="{% url 'categoria' categorias.id %}">{{ categorias.nombre }}</option>
-                    {% endfor %}
+                {% for categoria in categorias %}
+                    {% if categoria.id == categoria_id %}
+                        <option value="{% url 'categoria' categoria.id %}" selected>{{ categoria.nombre }}</option>
+                    {% else %}
+                        <option value="{% url 'categoria' categoria.id %}">{{ categoria.nombre }}</option>
+                    {% endif %}
                 {% endfor %}
             </select>
         </div>
         
+      
+
 
         <form method="get" action="{% url 'buscar' %}">
             <div class="search_bar">
