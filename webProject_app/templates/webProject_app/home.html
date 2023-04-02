@@ -5,12 +5,62 @@
 
 
 {% block content %}
+
     <!-- Carrousel -->
-    <h1 style="color:white; text-align:center">Ultimos posteos</h1>
-    <!-- {% for post in latest_posts %}
-      <h1 style="color:white; text-align:center">{{post.titulo}}</h1>
-    {% endfor %} -->
- 
+    
+    <h1 id="last_posts">Últimos posteos</h1>
+      <div class="slide-container swiper">
+        <div class="slide-content">
+            <div class="card-wrapper swiper-wrapper">
+             
+            {% for post in latest_posts %}
+            {% if post.imagen %}
+                    <!-- <div class=""> -->
+                      <div class="card swiper-slide post_w_img">
+                          <div class="post_header">
+                                  <img src="{{ post.imagen.url }}" alt="{{ post.titulo }}" class="card_img">
+                          </div>
+                          <div class="post_card_body">
+                              <a href="{% url 'view_post' post.id %}"class='viewpost'><h2 class="post_card_title">{{ post.titulo }}</h2></a>
+                              <p class="post_card_content">{{ post.contenido|truncatechars:100 }}</p>
+                            </div>
+                            <div class="post_card_footer">
+                              <h3>Creado por {{ post.autor }}</h3>
+                              {% for categorias in post.categoria.all %}
+                                  <a href="{% url 'categoria' categorias.id %}" class="postcategory"><span class="post_card_category">{{ categorias.nombre }}</span></a>
+                              {% endfor %}
+                            </div>
+                      </div>
+                    <!-- </div> -->
+                  {% else %}
+                    <!-- <div class="card swiper-slide"> -->
+                      <div class="card swiper-slide post_w_img">
+                          <div class="post_header">
+                                  <img src="{% static 'blog/img/post_sin_img.jpg' %}" alt="{{ post.titulo }}" class="card_img">
+                          </div>
+                          <div class="post_card_body">
+                              <a href="{% url 'view_post' post.id %}"class='viewpost'><h2 class="post_card_title">{{ post.titulo }}</h2></a>
+                              <p class="post_card_content">{{ post.contenido|truncatechars:100 }}</p>
+                            </div>
+                            <div class="post_card_footer">
+                              <h3>Creado por {{ post.autor }}</h3>
+                              {% for categorias in post.categoria.all %}
+                                  <a href="{% url 'categoria' categorias.id %}" class="postcategory"><span class="post_card_category">{{ categorias.nombre }}</span></a>
+                              {% endfor %}
+                            </div>
+                      </div>
+                    <!-- </div> -->
+                  {% endif %}
+                {% endfor %}
+        </div>
+
+        <div class="swiper-button-next swiper-navBtn"></div>
+        <div class="swiper-button-prev swiper-navBtn"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+      <!-- End slider  -->
+
+
     <!-- Heading -->
     <section class="page-section clearfix">
       <div class="container">

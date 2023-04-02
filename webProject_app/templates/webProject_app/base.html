@@ -12,8 +12,11 @@
       
       <!-- Styles -->
       
-      <link href="{% static 'webProject_app/css/gestion.css' %}" rel="stylesheet">
+      <link href="{% static 'webProject_app/css/base.css' %}" rel="stylesheet">
       <link href="{% static 'webProject_app/css/nav_btn.css' %}" rel="stylesheet">
+      <!-- Slider stylessheets -->
+      <link href="{% static 'webProject_app/css/slider.css' %}" rel="stylesheet">
+      <link href="{% static 'webProject_app/css/swiper-bundle.min.css' %}" rel="stylesheet">
       <link href="{% static 'servicios/css/servicios.css' %}" rel="stylesheet">
       <link href="{% static 'blog/css/blog.css' %}" rel="stylesheet">
       {% block title %}
@@ -104,9 +107,11 @@
         </div>
     </footer>
       <!-- My script -->
+      <!-- Nav script -->
       <script src="{% static 'webProject_app/js/nav_script.js' %}"></script>
-          
-      
+      <!-- Slider script -->
+      <script src="{% static 'webProject_app/js/swiper-bundle.min.js' %}"></script>
+      <script src="{% static 'webProject_app/js/slider_script.js' %}"></script>
       <!-- Bootstrap -->
       <script src="{% static 'webProject_app/vendor/jquery/jquery.min.js' %}"></script>
       <script src="{% static 'webProject_app/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
