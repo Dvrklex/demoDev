@@ -22,9 +22,4 @@ def blog(request):
     view_name= 'Blog'
     return render(request, 'webProject_app/blog.html',{'view_name': view_name})
 
-# Vista Contacto
-
-def contacto(request):
-    view_name= 'Contacto'
-    return render(request, 'webProject_app/contacto.html',{'view_name': view_name})
 

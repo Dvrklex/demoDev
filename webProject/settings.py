@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'webProject_app',
     'servicios',
     'blog',
+    'contacto',
 ]
 
 MIDDLEWARE = [
@@ -123,7 +124,8 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     './webProject_app/static/', 
     './servicios/static/', 
-    './blog/static/' 
+    './blog/static/' ,
+    './contacto/static/',
     
 ]
 MEDIA_URL = '/media/'

@@ -21,5 +21,6 @@ urlpatterns = [
     #path('webProject_app/', include('webProject_app.urls')), #importo los urls de la aplicación webProject_app
     path('', include('webProject_app.urls')), #si dejo el path vacío, se importan los urls de la aplicación webProject_app sin necesidad de poner el path de la aplicación
     path('servicios/', include('servicios.urls')), #importo los urls de la aplicación servicios
-    path('blog/', include('blog.urls'))
+    path('blog/', include('blog.urls')),
+    path('contacto/', include('contacto.urls')),
 ]
