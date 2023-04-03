@@ -38,6 +38,7 @@ body {
 
 *::-webkit-scrollbar-thumb:hover {
   background-color: #0093BF;
+  cursor: grab;
 }
 
 
