@@ -11,14 +11,18 @@
       <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
       
       <!-- Styles -->
-      
+      <!-- Base -->
       <link href="{% static 'webProject_app/css/base.css' %}" rel="stylesheet">
       <link href="{% static 'webProject_app/css/nav_btn.css' %}" rel="stylesheet">
-      <!-- Slider stylessheets -->
+      <!-- Home -->
       <link href="{% static 'webProject_app/css/slider.css' %}" rel="stylesheet">
       <link href="{% static 'webProject_app/css/swiper-bundle.min.css' %}" rel="stylesheet">
+      <!-- Servicios -->
       <link href="{% static 'servicios/css/servicios.css' %}" rel="stylesheet">
+      <!-- Blog -->
       <link href="{% static 'blog/css/blog.css' %}" rel="stylesheet">
+      <!-- Contacto -->
+      <link href="{% static 'contacto/css/form.css' %}" rel="stylesheet">
       {% block title %}
       {% endblock %}
   </head>
@@ -90,11 +94,9 @@
     {% endblock %}
 
       <!-- Footer -->
-      <footer class="footer text-faded text-center py-5">
+      <!-- <footer class="footer text-faded text-center py-5">
         <div class="container">
-         
           <p class="m-0 mbt">
-            <!-- Logo -->
             <a href="{% url 'Home' %}" class="link logos">
               <img src="{% static 'webProject_app/img/logo4.png' %}" alt="Logo" class="logo1">
               <img src="{% static 'webProject_app/img/NAME.png' %}" alt="Logo" class="logo2">
@@ -103,9 +105,8 @@
             <a href="" class="link docs">Aviso legal</a> ·
             <a href="" class="link docs">Cookies</a>
           </p>
-          
         </div>
-    </footer>
+    </footer> -->
       <!-- My script -->
       <!-- Nav script -->
       <script src="{% static 'webProject_app/js/nav_script.js' %}"></script>
