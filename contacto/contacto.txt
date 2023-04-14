@@ -1,0 +1,21 @@
+Formato formulario de contacto as_div
+
+<div>
+      <label for="id_nombre">Nombre:</label>
+    <input type="text" name="nombre" required id="id_nombre">
+    
+</div>
+  <div>
+      <label for="id_asunto">Asunto:</label>
+    <input type="text" name="asunto" required id="id_asunto">
+</div>
+  <div>
+      <label for="id_email">Email:</label>
+    <input type="email" name="email" required id="id_email">
+</div>
+  <div>
+      <label for="id_mensaje">Mensaje:</label>
+    <textarea name="mensaje" cols="40" rows="10" required id="id_mensaje">
+</textarea>
+      
+</div>

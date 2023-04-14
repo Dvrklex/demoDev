@@ -34,21 +34,24 @@
         tutorial, you can send me message from here. It's my pleasure to help
         you.
       </p>
-      <form action="#">
-        <div class="input-box">
-          <input type="text" placeholder="Enter your name" />
+      <form action="/contacto/" method="POST" class="formContact"> 
+        {% csrf_token %}
+        {{ form.as_div }}
+
+        <!-- <div class="input-box">
+          <input type="text" placeholder="Enter fullname" />
         </div>
         <div class="input-box">
-          <input type="text" placeholder="Enter your email" />
+          <input type="email" placeholder="Enter your email" />
         </div>
         <div class="input-box">
           <input type="text" placeholder="Enter your subject" />
         </div>
         <div class="input-box message-box">
           <textarea placeholder="Enter your message"></textarea>
-        </div>
+        </div> -->
         <div class="button">
-          <input type="button" value="Send Now" />
+          <input type="submit" value="Send Now" />
         </div>
       </form>
     </div>
