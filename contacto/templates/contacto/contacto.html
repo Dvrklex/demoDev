@@ -27,7 +27,7 @@
       </div>
     </div>
     <div class="right-side">
-      <div class="topic-text">¡Envianos un mensaje!</div>
+      <div class="topic-text">¡Envíanos tu consulta!</div>
       <p>
         Si tienes una duda o consulta, no dudes en contactarnos y un personal de nuestro equipo se pondrá en contacto contigo. 
         Estamos aquí para ayudarte.
@@ -35,8 +35,11 @@
       <form action="/contacto/" method="POST" class="formContact"> 
         {% csrf_token %}
         <!-- {{ form.as_div }} -->
-        <div class="input-box">
+        <div class="input-box full-name">
           {{ form.nombre }}
+        </div>
+        <div class="input-box full-name">
+          {{ form.apellido }}
         </div>
         <div class="input-box">
             {{ form.email }}
@@ -48,7 +51,7 @@
             {{ form.mensaje }}
         </div>
         <div class="button">
-          <input type="submit" value="Send Now" />
+          <input type="submit" value="Enviar" />
         </div>
       </form>
     </div>

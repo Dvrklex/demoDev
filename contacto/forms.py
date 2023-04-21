@@ -9,7 +9,13 @@ class FormularioContacto(forms.Form):
         max_length=50,
         widget=forms.TextInput(attrs={'class':'input-box','placeholder':'Nombre '})
         )
-    email = forms.EmailField(
+    apellido = forms.CharField(
+        required=True,
+        label='',
+        max_length=50,
+        widget=forms.TextInput(attrs={'class':'input-box','placeholder':'Apellido'})
+        )
+    email = forms.EmailField( 
         required=True,
         label='',
         max_length=50,
