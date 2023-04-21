@@ -3,20 +3,19 @@
 
 {% load static %} {% block content %}
 
-<!-- <div><p></p></div> -->
-<!-- <h1 style="text-align: center; color:aliceblue">Contacto</h1> -->
+
 <div class="container">
   <div class="content">
     <div class="left-side">
       <div class="address details">
         <i class="fas fa-map-marker-alt"></i>
-        <div class="topic">Address</div>
+        <div class="topic">Ubicación</div>
         <div class="text-one">Argentina, Cba</div>
         <div class="text-two">Córdoba, Arg</div>
       </div>
       <div class="phone details">
         <i class="fas fa-phone-alt"></i>
-        <div class="topic">Phone</div>
+        <div class="topic">Teléfono</div>
         <div class="text-one">+549 1111 2222</div>
         <div class="text-two">+549 1111 2222</div>
       </div>
@@ -28,28 +27,26 @@
       </div>
     </div>
     <div class="right-side">
-      <div class="topic-text">Send us a message</div>
+      <div class="topic-text">¡Envianos un mensaje!</div>
       <p>
-        If you have any work from me or any types of quries related to my
-        tutorial, you can send me message from here. It's my pleasure to help
-        you.
+        Si tienes una duda o consulta, no dudes en contactarnos y un personal de nuestro equipo se pondrá en contacto contigo. 
+        Estamos aquí para ayudarte.
       </p>
       <form action="/contacto/" method="POST" class="formContact"> 
         {% csrf_token %}
-        {{ form.as_div }}
-
-        <!-- <div class="input-box">
-          <input type="text" placeholder="Enter fullname" />
+        <!-- {{ form.as_div }} -->
+        <div class="input-box">
+          {{ form.nombre }}
         </div>
         <div class="input-box">
-          <input type="email" placeholder="Enter your email" />
+            {{ form.email }}
         </div>
         <div class="input-box">
-          <input type="text" placeholder="Enter your subject" />
+            {{ form.asunto }}
         </div>
         <div class="input-box message-box">
-          <textarea placeholder="Enter your message"></textarea>
-        </div> -->
+            {{ form.mensaje }}
+        </div>
         <div class="button">
           <input type="submit" value="Send Now" />
         </div>

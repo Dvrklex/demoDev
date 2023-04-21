@@ -64,10 +64,11 @@
 }
 .content .right-side p {
   color: #fff;
+  width: 90%;
 }
 .right-side .input-box {
   height: 50px;
-  width: 100%;
+  width: 90%;
   margin: 12px 0;
 }
 .right-side .input-box input,
@@ -102,11 +103,14 @@
   background: greenyellow;
   cursor: pointer;
   transition: all 0.3s ease;
+ 
 }
 .button input[type="submit"]:hover {
   background: green;
   color: white;
 }
+
+
 
 @media (max-width: 950px) {
   .container {
