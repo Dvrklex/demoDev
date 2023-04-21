@@ -1,5 +1,6 @@
 Pillow
 Django
+Django-admin
 Flask
 Pyramid
 psycopg2
