@@ -11,7 +11,7 @@
         <i class="fas fa-map-marker-alt"></i>
         <div class="topic">Ubicación</div>
         <div class="text-one">Argentina, Cba</div>
-        <div class="text-two">Córdoba, Arg</div>
+        <!-- <div class="text-two">Córdoba, Arg</div> -->
       </div>
       <div class="phone details">
         <i class="fas fa-phone-alt"></i>
@@ -23,7 +23,7 @@
         <i class="fas fa-envelope"></i>
         <div class="topic">Email</div>
         <div class="text-one">suport@dvrklex.com</div>
-        <div class="text-two">example@example.com</div>
+        <div class="text-two">no_reply@demodev.com</div>
       </div>
     </div>
     <div class="right-side">
@@ -32,6 +32,21 @@
         Si tienes una duda o consulta, no dudes en contactarnos y un personal de nuestro equipo se pondrá en contacto contigo. 
         Estamos aquí para ayudarte.
       </p>
+
+      {% if "valid" in request.GET %}
+        <div class="alert alert-success valid-message-form" role="alert" style="width:90%">
+          <strong>¡Tu mensaje ha sido enviado!</strong> Nos pondremos en contacto a la brevedad.
+        </div>
+      {% elif "invalid" in request.GET %}
+        <div class="alert alert-danger valid-message-form" role="alert" style="width:90%">
+          <strong>Ha ocurrido un error al enviar tu consulta.</strong> Por favor, intenta nuevamente más tarde.
+        </div>
+      {% elif "incomplete" in request.GET %}
+        <div class="alert alert-warning valid-message-form" role="alert" style="width:90%">
+          <strong>¡OPS! Ha ocurrido un error.</strong> Por favor, revisa la información de los campos para poder enviar tu consulta.
+        </div>
+      {% endif %}
+
       <form action="/contacto/" method="POST" class="formContact"> 
         {% csrf_token %}
         <!-- {{ form.as_div }} -->
