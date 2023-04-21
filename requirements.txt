@@ -3,3 +3,4 @@ Django
 Flask
 Pyramid
 psycopg2
+Django-admin
