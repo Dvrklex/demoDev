@@ -1,6 +1,15 @@
+<<<<<<< HEAD
 Pillow
 Django
 Django-admin
 Flask
 Pyramid
 psycopg2
+=======
+Pillow
+Django
+Flask
+Pyramid
+psycopg2
+Django-admin
+>>>>>>> contacto

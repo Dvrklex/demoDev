@@ -1,8 +1,60 @@
-{% extends '../webProject_app/base.html' %} <!-- hereda de la plantilla base.html-->
+{% extends '../webProject_app/base.html' %}
+<!-- hereda de la plantilla base.html-->
 
-{% load static %}
-{% block content %}
+{% load static %} {% block content %}
 
-<div><p></p></div>
-<h1 style="text-align: center; color:aliceblue">Contacto</h1>
+
+<div class="container">
+  <div class="content">
+    <div class="left-side">
+      <div class="address details">
+        <i class="fas fa-map-marker-alt"></i>
+        <div class="topic">Ubicación</div>
+        <div class="text-one">Argentina, Cba</div>
+        <div class="text-two">Córdoba, Arg</div>
+      </div>
+      <div class="phone details">
+        <i class="fas fa-phone-alt"></i>
+        <div class="topic">Teléfono</div>
+        <div class="text-one">+549 1111 2222</div>
+        <div class="text-two">+549 1111 2222</div>
+      </div>
+      <div class="email details">
+        <i class="fas fa-envelope"></i>
+        <div class="topic">Email</div>
+        <div class="text-one">suport@dvrklex.com</div>
+        <div class="text-two">example@example.com</div>
+      </div>
+    </div>
+    <div class="right-side">
+      <div class="topic-text">¡Envíanos tu consulta!</div>
+      <p>
+        Si tienes una duda o consulta, no dudes en contactarnos y un personal de nuestro equipo se pondrá en contacto contigo. 
+        Estamos aquí para ayudarte.
+      </p>
+      <form action="/contacto/" method="POST" class="formContact"> 
+        {% csrf_token %}
+        <!-- {{ form.as_div }} -->
+        <div class="input-box full-name">
+          {{ form.nombre }}
+        </div>
+        <div class="input-box full-name">
+          {{ form.apellido }}
+        </div>
+        <div class="input-box">
+            {{ form.email }}
+        </div>
+        <div class="input-box">
+            {{ form.asunto }}
+        </div>
+        <div class="input-box message-box">
+            {{ form.mensaje }}
+        </div>
+        <div class="button">
+          <input type="submit" value="Enviar" />
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
 {% endblock %}
