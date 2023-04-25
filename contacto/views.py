@@ -28,9 +28,13 @@ def contacto(request):
                 "{} {}, desde {} ha realizado la siguiente consulta: \n\n {}".format(nombre,apellido,email,mensaje),
                 "",[destinatario], reply_to=[email])
             try:
-                send_email.send()  # Llama al método send() en el objeto send_email
-                print('Mensaje enviado')
-                print(nombre,apellido,email,asunto,mensaje)
+                send_email.send()  
+                email_confirmacion = EmailMessage(
+                "Confirmación de recepción de consulta",
+                "Hemos recibido tu consulta. En las proximas horas nos pondremos en contacto contigo.\n Detalles de la consulta: \n\n Remitente: {} \n Asunto: {} \n Mensaje: {} \n\n\n Gracias por contactarnos. \n\n Atte. \n Equipo de Soporte de DemoDEV".format(email,asunto,mensaje),
+                "",[email])
+                
+                email_confirmacion.send()
                 return redirect("/contacto/?valid")
             except:
                 print('Ha ocurrido un error')
