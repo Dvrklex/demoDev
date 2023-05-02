@@ -10,11 +10,6 @@ def home(request):
         print(post.titulo)
     return render(request, 'webProject_app/home.html',{'view_name': view_name,"latest_posts":latest_posts})
 
-# Vista Tienda
-
-def tienda(request):
-    view_name= 'Tienda'
-    return render(request, 'webProject_app/tienda.html',{'view_name': view_name})
 
 # Vista Blog
 
