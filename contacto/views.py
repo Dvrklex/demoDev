@@ -12,6 +12,7 @@ destinatario = os.getenv('EMAIL_DESTINATARIO')
 
 def contacto(request):
     view_name= 'Contacto'
+    context = {'css_file':"contacto/css/form.css"}
     #Datos del formulario   
     if request.method == 'POST':
         form = FormularioContacto(request.POST)
@@ -40,4 +41,4 @@ def contacto(request):
     
         
         
-    return render(request, 'contacto/contacto.html',{'view_name': view_name, 'form': FormularioContacto})
+    return render(request, 'contacto/contacto.html',{'view_name': view_name,'context': context, 'form': FormularioContacto})

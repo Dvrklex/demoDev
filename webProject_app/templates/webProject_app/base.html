@@ -1,30 +1,24 @@
 {% load static %}
 <html>
   <head>
+    <!-- Bootstrap -->
+    <link href="{% static 'webProject_app/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'webProject_app/css/swiper-bundle.min.css' %}" rel="stylesheet">
+  
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
+    <!-- Styles -->
+    <!-- Base -->
+    <link href="{% static 'webProject_app/css/base.css' %}" rel="stylesheet">
+    <!-- Nav -->
+    <link href="{% static 'webProject_app/css/nav_btn.css' %}" rel="stylesheet">
+    
+    
+    {% block css_file %}{% endblock %}
 
-      <!-- Bootstrap -->
-      <link href="{% static 'webProject_app/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
-      <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous"> -->
-
-      <!-- Fonts -->
-      <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet"> 
-      <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
-      
-      <!-- Styles -->
-      <!-- Base -->
-      <link href="{% static 'webProject_app/css/base.css' %}" rel="stylesheet">
-      <link href="{% static 'webProject_app/css/nav_btn.css' %}" rel="stylesheet">
-      <!-- Home -->
-      <link href="{% static 'webProject_app/css/slider.css' %}" rel="stylesheet">
-      <link href="{% static 'webProject_app/css/swiper-bundle.min.css' %}" rel="stylesheet">
-      <!-- Servicios -->
-      <link href="{% static 'servicios/css/servicios.css' %}" rel="stylesheet">
-      <!-- Blog -->
-      <link href="{% static 'blog/css/blog.css' %}" rel="stylesheet">
-      <!-- Contacto -->
-      <link href="{% static 'contacto/css/form.css' %}" rel="stylesheet">
-      {% block title %}
-      {% endblock %}
+    {% block title %}
+    {% endblock %}
   </head>
 
   <body>

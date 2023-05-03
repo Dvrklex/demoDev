@@ -1,5 +1,10 @@
 {% extends '../webProject_app/base.html' %}
 {% load static %}
+{% block css_file %}
+{{ block.super }}
+    <link href="{% static context.css_file %}" rel="stylesheet">
+{% endblock %}
+
 {% block content %}
 <!-- Submenu filtro y busqueda -->
     <div class="sub_menu">

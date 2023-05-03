@@ -2,6 +2,11 @@
 
 
 {% load static %}
+{% block css_file %}
+{{ block.super }}
+    <link href="{% static context.css_file %}" rel="stylesheet">
+{% endblock %}
+
 {% block content %}
     <div class="sub_menu">
         <div class="dropdown">

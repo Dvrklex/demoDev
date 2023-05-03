@@ -5,10 +5,11 @@ from blog.models import Post
 
 def home(request):
     view_name= 'Home' #Esto es para que el JavaScript de la vista home.html pueda identificar la vista en la que se encuentra, y así poder cambiar el color del botón de la barra de navegación.
+    context = {"css_file":"webProject_app/css/slider.css"}
     latest_posts = Post.objects.all().order_by('-created')[:6]
     for post in latest_posts:
         print(post.titulo)
-    return render(request, 'webProject_app/home.html',{'view_name': view_name,"latest_posts":latest_posts})
+    return render(request, 'webProject_app/home.html',{'view_name': view_name,"context":context , "latest_posts":latest_posts})
 
 # Vista Tienda
 
