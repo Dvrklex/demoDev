@@ -5,6 +5,8 @@
 {% block css_file %}
 {{ block.super }} 
     <link href="{% static context.css_file %}" rel="stylesheet">
+    <link href="{% static context.home_css %}" rel="stylesheet">
+    <link href="{% static context.swiperBundle %}" rel="stylesheet">
 {% endblock %}
 
 
@@ -23,7 +25,7 @@
                     <!-- <div class=""> -->
                       <div class="card swiper-slide post_w_img">
                           <div class="post_header">
-                                  <img src="{{ post.imagen.url }}" alt="{{ post.titulo }}" class="card_img">
+                                  <img src="{{ post.imagen.url }}" alt="{{ post.titulo }}" class="card_img" >
                           </div>
                           <div class="post_card_body">
                               <a href="{% url 'view_post' post.id %}"class='viewpost'><h2 class="post_card_title">{{ post.titulo }}</h2></a>
@@ -103,5 +105,11 @@
       </section>
 
 
-  
+      {% block script_file %}
+        {{ block.super }}
+        <script src="{% static context.swiperBundleJs %}"></script>
+        <script src="{% static context.sliderJs %}"></script>
+
+      {% endblock %}
+
 {% endblock %}

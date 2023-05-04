@@ -1,9 +1,13 @@
 {% extends '../webProject_app/base.html' %} <!-- hereda de la plantilla base.html-->
 
 {% load static %}
+
 {% block css_file %}
+
 {{ block.super }}
     <link href="{% static context.css_file %}" rel="stylesheet">
+    <link href="{% static context.subMenu %}" rel="stylesheet">
+    <link href="{% static context.busqueda %}" rel="stylesheet">
 {% endblock %}
 
 {% block content %}

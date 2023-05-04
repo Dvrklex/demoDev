@@ -1,0 +1,109 @@
+
+ 
+/* Introduccions */
+.intro {
+    position: relative;
+  }
+  
+  @media (min-width: 992px) {
+    .intro .intro-img {
+      width: 65%;
+      float: left;
+    }
+    .intro .intro-text {
+      left: 600;
+      width: 60%;
+      margin-top: 3rem;
+      background-color: #14213D;
+      color: cornsilk;
+      position: absolute;
+    }
+    .intro .intro-text .intro-button {
+      width: 100%;
+      left: 0;
+      position: absolute;
+      bottom: -2rem;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .intro .intro-text {
+      width: 45%;
+    }
+  }
+  
+/* Mensje "Compromiso Total" */
+.cta {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    /* background-color: rgba(255, 255, 255, 0.486); */
+  }
+  
+  .cta .cta-inner {
+    position: relative;
+    padding: 3rem;
+    margin: 0.5rem;
+    background-color: #14213D;
+    color: cornsilk;
+  }
+  
+  .cta .cta-inner:before {
+    border-radius: 0.5rem;
+    content: '';
+    position: absolute;
+    top: -0.5rem;
+    bottom: -0.5rem;
+    left: -0.5rem;
+    right: -0.5rem;
+    border: 0.25rem solid rgba(255, 255, 255, 0.85);
+    box-shadow: 0px 0px 10px 1px #fff;
+    animation: breathe 1s ease-in-out infinite;
+    
+  }
+  @keyframes breathe {
+    0% {
+      box-shadow: 0px 0px 2px 1px #00e6e6;
+    }
+    10% {
+      box-shadow: 0px 0px 4px 1px #00e6e6;
+    }
+    20% {
+      box-shadow: 0px 0px 6px 1px #00e6e6;
+    }
+    30% {
+      box-shadow: 0px 0px 8px 1px #00e6e6;
+    }
+    40% {
+      box-shadow: 0px 0px 10px 1px #00e6e6;
+    }
+    50% {
+      box-shadow: 0px 0px 12px 1px #00e6e6;
+    }
+    60% {
+      box-shadow: 0px 0px 10px 1px #00e6e6;
+    }
+    70% {
+      box-shadow: 0px 0px 8px 1px #00e6e6;
+    }
+    80% {
+      box-shadow: 0px 0px 6px 1px #00e6e6;
+    }
+    90% {
+      box-shadow: 0px 0px 4px 1px #00e6e6;
+    }
+    100% {
+      box-shadow: 0px 0px 2px 1px #00e6e6;
+    }
+  }
+  .cta .cta-innerv {
+    position: relative;
+    padding: 3rem;
+    margin: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.151);
+  }
+  
+  
+  
+  
+  
+  

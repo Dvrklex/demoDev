@@ -1,0 +1,114 @@
+/* Form */
+.sub_menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sub_menu > * {
+    margin: 0 30px;
+}
+.sub_menu label {
+    color: #fff;
+    font-size: 18px;
+    margin: 15px;
+    
+}
+/* .dropdown{
+    margin-top: 7px;
+} */
+
+.sub_menu select {
+    background-color: transparent;
+    padding: 10px;
+    color: #fff;
+    border-radius: 5px;
+    margin: 10px;
+    border: 2px solid #fff;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    width: 200px;
+}
+.sub_menu select:focus{
+    background-color: #fff;
+    color: #000;
+}
+.sub_menu select option{
+    color: #000;
+    font-weight: 400;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    width: 200px;
+    transition: background-color 0.3s ease;
+}
+.sub_menu select option:checked{
+    background-color: #a8a8a8;
+}
+select option:hover {
+    background-color: #f2f2f2; 
+}
+
+
+
+.sub_menu button[type="submit"] {
+    background-color: transparent;
+    color: white;
+    border: 2px solid #fff;
+    padding: 10px;
+    height: 45px;
+    margin: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out
+}
+.sub_menu button[type="submit"]:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+/* Titulo de Resultado de Filtro */
+.titulo_cat_filtro{
+    margin: 15px;
+    color: #e7e7e7;
+    font-size:32px;
+    line-height: 1.5;
+    letter-spacing: 5px;
+    word-spacing: 10px;
+    text-align: center;
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+
+/* Search bar */
+.search_bar {
+width: 350px;
+height: auto;
+/* margin: 20px; */
+display: flex;
+justify-content: center;
+align-items: center;
+
+
+}
+
+.search_bar input[type=search] {
+width: 160px;
+padding: 8px 20px 8px 45px;
+border: #fff solid 2px;
+font-size: 18px;
+border-radius: 25px;
+background-position: 2% 50%;
+background-repeat: no-repeat;
+background-size: 30px;
+background-image: url('search.svg');
+background-color: transparent;
+transition: 0.5s all ease-in-out;
+filter: brightness(170%);
+}
+
+.search_bar input[type=search]:focus,
+.search_bar input[type=search]:not(:placeholder-shown) {
+width: 350px;
+background-color: #fff;
+filter: brightness(100%);
+}

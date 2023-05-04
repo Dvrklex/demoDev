@@ -32,7 +32,7 @@ navItems.forEach((item, index) => {
   });
 
    
-  console.log('Muestro la URL actual: ' + window.location.href);
+  //console.log('Muestro la URL actual: ' + window.location.href);
 
   
 });

@@ -1,0 +1,42 @@
+/* Resultado de busqueda */
+.resultados_busqueda{
+    margin: 15px;
+    color: #e7e7e7;
+    font-size:32px;
+    line-height: 1.5;
+    letter-spacing: 5px;
+    word-spacing: 10px;
+    text-align: center;
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+.no_results_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+   
+.no_results_container img{
+    width: 500px;
+    height: auto;
+    filter: blur(5px);
+    margin-bottom: 20px;
+}
+
+.no_results_container h3{
+    position: relative;
+    font-size: 30px;
+    font-weight: 600;
+    color: #fff;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+.no_results_container p{
+    font-size: 20px;
+    font-weight: 400;
+    color: #fff;
+}
+
