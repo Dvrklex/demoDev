@@ -3,7 +3,52 @@
 
 {% load static %}
 
+{% block css_file %}
+
+{{ block.super }}
+    <link href="{% static context.tienda %}" rel="stylesheet">
+    <link href="{% static context.subNav %}" rel="stylesheet">
+{% endblock %}
+
 
 {% block content %}
+    <div class="sub_menu">
+        <div class="dropdown">
+            <select onchange="location = this.value;">
+                <option>Filtrar categorías...</option>
+                {% for categoria in categorias %}
+                    {% if categoria.id == categoria_id %}
+                        <option value="{% url 'categoria' categoria.id %}" selected>{{ categoria.nombre }}</option>
+                    {% else %}
+                        <option value="{% url 'categoria' categoria.id %}">{{ categoria.nombre }}</option>
+                    {% endif %}
+                {% endfor %}
+            </select>
+        </div>
+        
+      
 
+
+        <form method="get" action="{% url 'buscar' %}">
+            <div class="search_bar">
+                <input type="search" name="search" id="search" placeholder="Buscar...">
+            </div>
+        </form>
+    </div>
+
+
+<div class="container">
+     {% for producto in productos %}
+    <div class="product-card">
+        <img src="{{ producto.imagen.url }}" alt="Nombre del producto">
+        <h3><a>{{ producto.nombre }}</a></h3>
+        <!-- <p>{{ producto.descripcion }}</p> -->
+        <p>Precio: {{ producto.precio }}</p>
+        <p>Categoría: Categoría del producto</p>
+        <p>Disponibilidad: {{ producto.disponibilidad }}</p>
+        <button>Agregar al carrito</button>
+    </div>
+    {% endfor %}
+</div>
+      
 {% endblock %}
