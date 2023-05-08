@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'servicios',
     'blog',
     'contacto',
+    'tienda',
 ]
 
 MIDDLEWARE = [
@@ -127,6 +128,7 @@ STATICFILES_DIRS = [
     './servicios/static/', 
     './blog/static/' ,
     './contacto/static/',
+    './tienda/static/',
     
 ]
 MEDIA_URL = '/media/'
