@@ -1,43 +1,68 @@
+.productos_container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
 .product-card {
-    display: inline-block;
-    width: 300px;
-    margin: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
-  }
+  display: grid;
+  width: 300px;
+  margin: 10px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4.9px);
+  -webkit-backdrop-filter: blur(4.9px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   
-  .product-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 5px;
-    margin-bottom: 10px;
-  }
+
+}
+
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
   
-  .product-card h3 {
-    font-size: 1.5rem;
-    margin: 0;
-  }
+.product-card h3 {
+  font-size: 1.5rem;
+  margin: 0;
+  color: aliceblue;
+}
+
+.product-card p {
+  margin: 5px 0;
+  font-size: 1rem;
+  color: aliceblue;
+}
   
-  .product-card p {
-    margin: 5px 0;
-    font-size: 1rem;
-  }
+.product-card button {
+  background-color: green;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 1rem;
+}
   
-  .product-card button {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px;
-    font-size: 1rem;
-  }
-  
-  .product-card button:hover {
-    background-color: #555;
-  }
-  
+/*Hovers*/
+.product-card button:hover {
+  color: #000;
+  background-color: greenyellow;
+}
+
+.product-card:hover{
+  cursor: pointer;
+  box-shadow: 0px 0px 9px 0px rgb(242, 250, 255);
+  -webkit-box-shadow: 0px 0px 9px 0px rgb(242, 250, 255);
+  -moz-box-shadow: 0px 0px 9px 0px rgb(242, 250, 255);
+  transform: scale(1.05);
+  transition: all .3s ease-in-out;
+}

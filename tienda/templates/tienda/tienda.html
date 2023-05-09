@@ -37,15 +37,19 @@
     </div>
 
 
-<div class="container">
+<div class="productos_container">
      {% for producto in productos %}
     <div class="product-card">
         <img src="{{ producto.imagen.url }}" alt="Nombre del producto">
         <h3><a>{{ producto.nombre }}</a></h3>
         <!-- <p>{{ producto.descripcion }}</p> -->
-        <p>Precio: {{ producto.precio }}</p>
+        <p>Precio: ${{ producto.precio }}</p>
         <p>Categoría: Categoría del producto</p>
-        <p>Disponibilidad: {{ producto.disponibilidad }}</p>
+        {% if producto.disponibilidad %}
+            <p> En stock </p>
+        {% else %}
+            <p> Sin stock </p>
+        {% endif %}
         <button>Agregar al carrito</button>
     </div>
     {% endfor %}
