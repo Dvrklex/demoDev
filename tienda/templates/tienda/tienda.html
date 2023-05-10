@@ -26,7 +26,12 @@
             </select>
         </div>
         
-      
+        <div class="carrito">
+            <a href="#">
+                <ion-icon name="cart-outline"></ion-icon>
+                <span>(0)</span>
+            </a>
+        </div>
 
 
         <form method="get" action="{% url 'buscar' %}">
@@ -40,16 +45,22 @@
 <div class="productos_container">
      {% for producto in productos %}
     <div class="product-card">
-        <img src="{{ producto.imagen.url }}" alt="Nombre del producto">
-        <h3><a>{{ producto.nombre }}</a></h3>
+        <div class="product-header">
+            <img src="{{ producto.imagen.url }}" alt="Nombre del producto">
+            <h3><a>{{ producto.nombre }}</a></h3>
+        </div>
         <!-- <p>{{ producto.descripcion }}</p> -->
-        <p>Precio: ${{ producto.precio }}</p>
-        <p>Categoría: Categoría del producto</p>
-        {% if producto.disponibilidad %}
-            <p> En stock </p>
-        {% else %}
-            <p> Sin stock </p>
-        {% endif %}
+        <div class="product-body">
+            <p>${{ producto.precio }}</p>
+            <div class="cat-stock">
+                <a href="#" class="postcategory"><span class="product-category"> {{ producto.categoria }} </span></a>
+                {% if producto.disponibilidad %}
+                    <span class='stock'> Stock <ion-icon name="checkmark-circle-outline"></ion-icon> </span>
+                {% else %}
+                    <span class='no-stock'> Stock <ion-icon name="close-circle-outline"></ion-icon></span>
+                {% endif %}
+            </div>
+        </div>
         <button>Agregar al carrito</button>
     </div>
     {% endfor %}

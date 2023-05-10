@@ -12,7 +12,7 @@
   margin: 10px;
   padding: 10px;
   background: rgba(255, 255, 255, 0.04);
-  border-radius: 16px;
+  border-radius: 15px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(4.9px);
   -webkit-backdrop-filter: blur(4.9px);
@@ -21,31 +21,81 @@
 
 }
 
-.product-card img {
+/* CARD HEADER */
+.product-card .product-header{
+  height: 250px;
+}
+.product-card .product-header img {
   width: 100%;
   height: 200px;
   object-fit: cover;
-  border-radius: 5px;
+  border-radius: 15px 15px 0px 0px;
   margin-bottom: 10px;
 }
   
-.product-card h3 {
+.product-card .product-header h3 {
   font-size: 1.5rem;
-  margin: 0;
   color: aliceblue;
+  text-align: center;
 }
 
-.product-card p {
+/* CARD BODY */
+
+.product-card .product-body{
+  padding: 10px;
+  margin-top: 15px;
+  justify-content: space-between;
+}
+
+.product-card .product-body p {
   margin: 5px 0;
-  font-size: 1rem;
-  color: aliceblue;
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+  color: green;
 }
   
+.product-card .product-body .cat-stock{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.product-card .product-body .cat-stock a{
+  color: aliceblue;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.product-card .product-body .cat-stock span{
+  color: rgb(187, 187, 187);
+  font-size: 1rem;
+  font-weight: 600;
+}
+.product-card .product-body .product-category:hover{
+  text-decoration: underline;
+  
+
+}
+.product-card .product-body .cat-stock span ion-icon{
+  font-size: 20px;
+  margin-right: 5px;
+}
+
+.product-card .product-body .cat-stock .stock ion-icon{
+  color: greenyellow
+}
+.product-card .product-body .cat-stock .no-stock ion-icon{
+  color: red
+}
+
+/* BUTTON "AGREGAR AL CARRITO" */
 .product-card button {
-  background-color: green;
+  background-color: transparent;
   color: #fff;
   padding: 10px 20px;
-  border: none;
+  border: green 2px solid;
   border-radius: 5px;
   cursor: pointer;
   margin-top: 10px;
@@ -55,6 +105,7 @@
 /*Hovers*/
 .product-card button:hover {
   color: #000;
+  border: none;
   background-color: greenyellow;
 }
 

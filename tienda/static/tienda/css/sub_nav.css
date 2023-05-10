@@ -112,3 +112,28 @@ width: 350px;
 background-color: #fff;
 filter: brightness(100%);
 }
+
+
+/* CARRITO */
+.carrito{
+    border: #fff solid 2px;
+    /* background-color: greenyellow; */
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.carrito a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.carrito ion-icon{
+    font-size: 25px;
+    color: white
+}
+
+.carrito:hover {
+    cursor: pointer;
+    border: greenyellow solid 2px;
+    color: greenyellow;
+}
