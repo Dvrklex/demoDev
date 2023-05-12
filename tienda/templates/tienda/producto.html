@@ -1,0 +1,81 @@
+{% extends '../webProject_app/base.html' %} <!-- hereda de la plantilla base.html-->
+
+
+{% load static %}
+
+{% block css_file %}
+
+{{ block.super }}
+    <link href="{% static context.tienda %}" rel="stylesheet">
+    <link href="{% static context.subNav %}" rel="stylesheet">
+    <link href="{% static context.producto %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+    <div class="sub_menu">
+        <div class="dropdown">
+            <select onchange="location = this.value;">
+                <option>Filtrar categorías...</option>
+                {% for categoria in categorias %}
+                    {% if categoria.id == categoria_id %}
+                        <option value="{% url 'categoria' categoria.id %}" selected>{{ categoria.nombre }}</option>
+                    {% else %}
+                        <option value="{% url 'categoria' categoria.id %}">{{ categoria.nombre }}</option>
+                    {% endif %}
+                {% endfor %}
+            </select>
+        </div>
+        
+        <div class="carrito">
+            <a href="#">
+                <ion-icon name="cart-outline"></ion-icon>
+                <span>{{importe_total_carro}}</span>
+            </a>
+        </div>
+
+
+        <form method="get" action="{% url 'buscar' %}">
+            <div class="search_bar">
+                <input type="search" name="search" id="search" placeholder="Buscar...">
+            </div>
+        </form>
+    </div>
+
+    <!-- <h1>{{ producto.nombre }}</h1> -->
+    <div class="index_container">
+        <div class="lr_container">
+
+                <div class="left_content">
+                    <img src="{{ producto.imagen.url }}" alt="Nombre del producto">
+                    <!-- <h2>Izquiera</h2> -->
+                </div>
+                <div class="right_content">
+                    <h2 class="prod_nombre">{{ producto.nombre }}</h2>
+                    <h2 class="prod_precio">${{ producto.precio }}</h2>
+                    <div class="spans_container">
+                        <span><ion-icon name="location-outline"></ion-icon><strong>Envíos a todo el país.</strong></span>
+                        <span><ion-icon name="return-down-back-outline"></ion-icon><strong>Devolución gratis.</strong> Tenés 30 días desde que lo recibís.</span>
+                        <span><ion-icon name="shield-checkmark-outline"></ion-icon><strong>Compra protegida.</strong> Recibí el producto como esparabas o te devolvemos tu dinero.</span>
+                    </div>
+                    <div class="cat-stock">
+                        <a href="#" class="prod_categoria"><span class="product-category">{{ producto.categoria }} </span></a>
+                        {% if producto.disponibilidad %}
+                            <span class='stock'> Stock <ion-icon name="checkmark-circle-outline"></ion-icon> </span>
+                        {% else %}
+                            <span class='no-stock'> Stock <ion-icon name="close-circle-outline"></ion-icon></span>
+                        {% endif %}
+                    </div>
+                    <div class="btns">
+                        <a href="#" class="btn">Comprar ahora</a>
+                        <a href="#" class="btn">Agregar al carrito</a>
+                    </div>
+
+                </div>
+
+            </div>
+        <div class="bottom_content">
+            <h2>{{producto.descripcion}}</h2>
+        </div>
+    </div>
+
+{% endblock %}

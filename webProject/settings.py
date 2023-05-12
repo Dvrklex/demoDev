@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'blog',
     'contacto',
     'tienda',
+    'carrito',
 ]
 
 MIDDLEWARE = [
@@ -68,6 +69,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'carrito.context_processor.importe_total_carro',
             ],
         },
     },
@@ -129,6 +131,7 @@ STATICFILES_DIRS = [
     './blog/static/' ,
     './contacto/static/',
     './tienda/static/',
+    './carrito/static/',
     
 ]
 MEDIA_URL = '/media/'

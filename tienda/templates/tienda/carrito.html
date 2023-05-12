@@ -1,0 +1,17 @@
+{% extends '../webProject_app/base.html' %} <!-- hereda de la plantilla base.html-->
+
+
+{% load static %}
+
+{% block css_file %}
+
+{{ block.super }}
+    <link href="{% static context.tienda %}" rel="stylesheet">
+    <link href="{% static context.subNav %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+
+    <h1>Carrito</h1>
+
+{% endblock %}

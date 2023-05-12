@@ -29,7 +29,7 @@
         <div class="carrito">
             <a href="#">
                 <ion-icon name="cart-outline"></ion-icon>
-                <span>(0)</span>
+                <span>{{importe_total_carro}}</span>
             </a>
         </div>
 
@@ -42,28 +42,32 @@
     </div>
 
 
-<div class="productos_container">
-     {% for producto in productos %}
-    <div class="product-card">
-        <div class="product-header">
-            <img src="{{ producto.imagen.url }}" alt="Nombre del producto">
-            <h3><a>{{ producto.nombre }}</a></h3>
-        </div>
-        <!-- <p>{{ producto.descripcion }}</p> -->
-        <div class="product-body">
-            <p>${{ producto.precio }}</p>
-            <div class="cat-stock">
-                <a href="#" class="postcategory"><span class="product-category"> {{ producto.categoria }} </span></a>
-                {% if producto.disponibilidad %}
-                    <span class='stock'> Stock <ion-icon name="checkmark-circle-outline"></ion-icon> </span>
-                {% else %}
-                    <span class='no-stock'> Stock <ion-icon name="close-circle-outline"></ion-icon></span>
-                {% endif %}
+    <div class="productos_container">
+        {% for producto in productos %}
+
+            <div class="product-card">
+                <div class="product-header">
+                    <img src="{{ producto.imagen.url }}" alt="Nombre del producto">
+                    <a href="{% url 'view_product' producto.id %}"class='viewproduct'><h3>{{ producto.nombre }}</h3></a>
+                   
+                </div>
+                <!-- <p>{{ producto.descripcion }}</p> -->
+                <div class="product-body">
+                    <p>${{ producto.precio }}</p>
+                    <div class="cat-stock">
+                        <a href="#" class="postcategory"><span class="product-category"> {{ producto.categoria }} </span></a>
+                        {% if producto.disponibilidad %}
+                            <span class='stock'> Stock <ion-icon name="checkmark-circle-outline"></ion-icon> </span>
+                        {% else %}
+                            <span class='no-stock'> Stock <ion-icon name="close-circle-outline"></ion-icon></span>
+                        {% endif %}
+                    </div>
+                </div>
+                <!-- <button>Agregar al carrito</button> -->
+                <a href="#" class="btn">Agregar al carrito</a>
             </div>
-        </div>
-        <button>Agregar al carrito</button>
+            
+        {% endfor %}
     </div>
-    {% endfor %}
-</div>
       
 {% endblock %}

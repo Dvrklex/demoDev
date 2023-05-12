@@ -33,6 +33,14 @@
   margin-bottom: 10px;
 }
   
+.product-card .product-header a{
+  text-decoration: none;
+  font-style: bold;
+}
+.product-card .product-header a:hover{
+  text-decoration: underline greenyellow;
+  transition: 0.5s;
+}
 .product-card .product-header h3 {
   font-size: 1.5rem;
   color: aliceblue;
@@ -91,7 +99,7 @@
 }
 
 /* BUTTON "AGREGAR AL CARRITO" */
-.product-card button {
+.product-card .btn {
   background-color: transparent;
   color: #fff;
   padding: 10px 20px;
@@ -100,10 +108,11 @@
   cursor: pointer;
   margin-top: 10px;
   font-size: 1rem;
+  text-decoration: none;
 }
   
 /*Hovers*/
-.product-card button:hover {
+.product-card .btn:hover {
   color: #000;
   border: none;
   background-color: greenyellow;
