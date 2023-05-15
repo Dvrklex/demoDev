@@ -5,7 +5,7 @@
   margin-top: 50px;
   margin-bottom: 50px;
 }
-
+ 
 .product-card {
   display: grid;
   width: 300px;
@@ -99,20 +99,21 @@
 }
 
 /* BUTTON "AGREGAR AL CARRITO" */
-.product-card .btn {
-  background-color: transparent;
+.productos_container .product-card .btn_card {
+  text-decoration: none;
+  text-align: center;
   color: #fff;
+  background-color: transparent;
   padding: 10px 20px;
   border: green 2px solid;
   border-radius: 5px;
   cursor: pointer;
   margin-top: 10px;
   font-size: 1rem;
-  text-decoration: none;
 }
   
 /*Hovers*/
-.product-card .btn:hover {
+.product-card .btn_card:hover {
   color: #000;
   border: none;
   background-color: greenyellow;
