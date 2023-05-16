@@ -80,6 +80,26 @@
     right: 0;
     left: 0;
 }
+.right_content .btns .btn1{
+    padding: 10px 20px;
+    margin:3px;
+    border-radius: 10px;
+    background-color: greenyellow;
+    color: black;
+    text-decoration: none;
+}
+.right_content .btns .btn2{
+    padding: 10px 20px;
+    margin:3px;
+    border: 1px solid greenyellow;
+    border-radius: 10px;
+    color: greenyellow;
+    text-decoration: none;
+}
+.right_content .btns .btn1:hover{
+    translate: scale(1.1);
+    transition: 0.5s;
+}
 
 .right_content span{
     color: aliceblue;
