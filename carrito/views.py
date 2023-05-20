@@ -8,27 +8,24 @@ def agregar_producto_carro(request,producto_id):
     producto = Producto.objects.get(id=producto_id )
     
     carrito.agregar(producto=producto)    
-    
-    return redirect("tienda")
+    return redirect("Tienda")
 
 def eliminar_producto_carro(request,producto_id):
     carrito = Carrito(request)
-    producto = Producto.objects.get(id=producto_id )
-    
-    carrito.eliminar(producto=producto)    
-    
-    return redirect("tienda")
+    carrito.eliminar(producto_id)    
+    return redirect("Carrito")
 
-def restar_producto_carro(request,producto_id):
+def restar_producto_carro(request, producto_id):
     carrito = Carrito(request)
-    producto = Producto.objects.get(id=producto_id )
+    producto = Producto.objects.get(id=producto_id)
     
-    carrito.restar_producto(producto=producto)    
+    carrito.restar_producto(producto)
     
-    return redirect("tienda")
+    return redirect("Carrito")
+
 
 def limpar_carro(request):
     carrito = Carrito(request)
     carrito.vaciar_carro()
-    
-    return redirect("tienda")
+    return redirect("Tienda")
+

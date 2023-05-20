@@ -13,11 +13,13 @@
 /* -- LEFT CONTENT --*/
 
 .left_content{
-    width: 800px;
-    height: 500px;
+    width: 650px;
+    height: 450px;
+    overflow: hidden;
     border: solid 1px white;
     background-color: white;
-    margin: 10px
+    margin: 10px 10px 5px 10px;
+    border-radius: 16px;
 }
 
 .left_content img{
@@ -26,6 +28,7 @@
     object-fit: cover;
     top: 0;
     left: 0;
+
 }
 
 
@@ -34,19 +37,20 @@
 .right_content{
     /* display: grid; */
     width: 500px;
-    height: 500px;
-    margin: 10px;
+    height: 450px;
+    margin: 10px 10px 5px 10px;
     background: rgba(0, 255, 113, 0);
     border-radius: 16px;
+    
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(7.2px);
     -webkit-backdrop-filter: blur(7.2px);
-    /* border: 1px solid greenyellow; */
+    border: 1px solid greenyellow;
 }
 
 
 .right_content .prod_nombre{
-    color: aliceblue;
+    color: greenyellow;
     font-size: 35px;
     font-weight: bold;
     margin: 10px;
@@ -63,6 +67,10 @@
 
 .right_content .spans_container{
     display: grid;
+    padding: 10px;
+}
+.right_content .spans_container span {
+    margin-top: 15px
 }
 .right_content .spans_container span ion-icon{
     color: greenyellow;
@@ -71,7 +79,7 @@
 }
 
 .right_content .btns{
-    display: grid;
+    display: flex;
     position: absolute;
     justify-content: center;
     align-items: center;
@@ -80,7 +88,7 @@
     right: 0;
     left: 0;
 }
-.right_content .btns .btn1{
+.right_content  .btn1{
     padding: 10px 20px;
     margin:3px;
     border-radius: 10px;
@@ -88,7 +96,7 @@
     color: black;
     text-decoration: none;
 }
-.right_content .btns .btn2{
+.right_content   .btn2{
     padding: 10px 20px;
     margin:3px;
     border: 1px solid greenyellow;
@@ -96,14 +104,20 @@
     color: greenyellow;
     text-decoration: none;
 }
-.right_content .btns .btn1:hover{
-    translate: scale(1.1);
-    transition: 0.5s;
+.right_content .btn1:hover,
+.right_content .btn2:hover{
+    transition : 1000ms;
+    padding: 10px 50px;
+    transform : translateY(-0px);
 }
-
 .right_content span{
     color: aliceblue;
+
 }
+.right_content .cat-stock .prod_categoria{
+    text-decoration: none;
+}
+
 .right_content .cat-stock{
     display: flex;
     justify-content: space-between;
@@ -118,9 +132,26 @@
 }
 /* -- BOTTOM CONTENT --*/
 .bottom_content{
-    width: 900px;
+    width: 1170px;
     height: 250px;
-    border: solid 1px lightblue;
-    background-color: lightblue;
-    margin: auto
+    margin: auto;
+    top: 5px;
+    border: 2px solid greenyellow;
+    border-radius: 16px;
+    
 }
+.bottom_content h2{
+    margin: 10px;
+    color:white;
+    font-size: 34px;
+    text-align: center;
+}
+.bottom_content p{
+    margin: 5px;
+    color:white;
+    font-size: 22px;
+    text-align: center;
+}
+
+
+

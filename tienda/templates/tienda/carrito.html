@@ -6,12 +6,30 @@
 {% block css_file %}
 
 {{ block.super }}
-    <link href="{% static context.tienda %}" rel="stylesheet">
-    <link href="{% static context.subNav %}" rel="stylesheet">
+    <link href="{% static context.carrito %}" rel="stylesheet">
 {% endblock %}
 
 {% block content %}
 
-    <h1>Carrito</h1>
-
+    <div class="content_container">
+        <div class="left_content">
+            {% for key, value in elementos_carro.items %}
+                <div class="content">
+                    <div class="img_btn">
+                        <img src="{{ value.imagen }}" >
+                        <a href="{% url 'carrito:eliminar' value.producto_id %}">eliminar</a>
+                    </div>
+                    <div class="info">
+                        <h3>Nombre: {{ value.nombre }}</h3>
+                        <p>Precio: {{ value.precio }}</p>
+                        <p>Cantidad: {{ value.cantidad }}</p>
+                    </div>
+                    <a href="{% url 'carrito:restar' value.producto_id %}">restar carro</a>        
+                </div> 
+            {% endfor %}
+        </div>
+        <div class="right_content">
+            <a href="{% url 'carrito:limpiar' %}">vaciar carro</a>
+        </div>
+    </div>
 {% endblock %}

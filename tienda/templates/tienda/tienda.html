@@ -27,7 +27,7 @@
         </div>
         
         <div class="carrito">
-            <a href="#">
+            <a href="{% url 'Carrito' %}">
                 <ion-icon name="cart-outline"></ion-icon>
                 <span>{{importe_total_carro}}</span>
             </a>
@@ -64,7 +64,7 @@
                     </div>
                 </div>
                 <!-- <button>Agregar al carrito</button> -->
-                <a href="#" class="btn_card">Agregar al carrito</a>
+                <a href="{% url 'carrito:agregar' producto.id %}" class="btn_card">Agregar al carrito</a>
             </div>
             
         {% endfor %}
