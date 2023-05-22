@@ -23,6 +23,14 @@ def restar_producto_carro(request, producto_id):
     
     return redirect("Carrito")
 
+def sumar_producto_carro(request, producto_id):
+    carrito = Carrito(request)
+    producto = Producto.objects.get(id=producto_id)
+    
+    carrito.sumar_producto(producto)
+    
+    return redirect("Carrito")
+
 
 def limpar_carro(request):
     carrito = Carrito(request)

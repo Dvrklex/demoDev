@@ -37,5 +37,9 @@ def view_carrito(request):
     carrito = Carrito(request)  # Crear instancia de la clase Carrito
     elementos_carro = carrito.carro  # Obtener los elementos del carro
     context = {'carrito':'tienda/css/carrito.css'}
-    
-    return render(request, 'tienda/carrito.html',{'elementos_carro':elementos_carro,'context':context})
+    total_carro = 0
+    for key, value in elementos_carro.items():
+        value['total'] = float(value['precio']) * int(value['cantidad'])
+        total_carro += float(value['total'])
+
+    return render(request, 'tienda/carrito.html',{'elementos_carro':elementos_carro,'context':context,'total_carro':total_carro})

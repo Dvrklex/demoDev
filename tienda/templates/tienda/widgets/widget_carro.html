@@ -1,0 +1,36 @@
+<div class="container">
+   <div class="content_container">
+        <div class="left_content">
+            {% for key, value in elementos_carro.items %}
+                <div class="content">
+                    <div class="img_btn">
+                        <img src="{{ value.imagen }}" >
+                    </div>
+                    <div class="info">
+                        <h3>{{ value.nombre }}</h3>
+                        <p>${{ value.precio }}</p>
+                        <p class="cantidad_prod"> 
+                            <a href="{% url 'carrito:restar' value.producto_id %}"><ion-icon name="remove-circle-outline"></ion-icon></a>        
+                            {{ value.cantidad }}
+                            <a href="{% url 'carrito:sumar' value.producto_id %}"><ion-icon name="add-circle-outline"></ion-icon></ion-icon></a>   
+                        </p>
+                        <a class="btn_del" href="{% url 'carrito:eliminar' value.producto_id %}"><ion-icon name="close-outline"></ion-icon></a>
+                    </div>
+                    <div class="total_cantidad">
+                        <p>Subtotal ${{ value.total}}</p>    
+                    </div>
+                </div> 
+            {% endfor %}
+        </div>
+        <div class="right_content">
+            <h3>Resumen del carro</h3>
+            <p><ion-icon name="arrow-down-outline"></ion-icon><ion-icon name="arrow-down-outline"></ion-icon></p>
+            <p>Importe total</p>
+            <p>${{total_carro}}</p>
+            <div class="btns">
+                <a class="vaciar_carro" href="{% url 'carrito:limpiar' %}"><ion-icon name="trash-outline"></ion-icon></a>
+                <a class="continuar" href="#">Continuar compra</a>
+            </div>
+        </div>
+    </div>
+</div>

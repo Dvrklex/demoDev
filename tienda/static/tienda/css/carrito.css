@@ -1,48 +1,218 @@
 .content_container{
     display: flex;
-    flex-direction: column;
+    position: relative;
     align-items: center;
     justify-content: center;
     margin-top: 50px;
+    padding: 15px;
 }
 
 .left_content{
     display: flex;
     flex-direction: column;
     height: 500px;
-    width: 600px;
+    width: 630px;
+    margin:15px;
+    
 }
 
 .left_content .content{
     display: flex;
+    position: relative;
     align-items: center;
     justify-content: center;
-
+    margin: 5px;
     width: 100%;
-    height: 100%;
-    background-color: antiquewhite;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
+
 .left_content .content .img_btn{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    background-color: aqua;
+    width: 250px;
+    height: 250px;
 }
+
 .left_content .content .img_btn img{
-    width: 150px;
-    height: 100px;
+    width: 220px;
+    height: 150px;
+    object-fit: cover;
 }
 
-
-
-
-
-.right_content{
+/* Nombre y precio unitario */
+.left_content .content .info{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 50%;
+    width: 350px;
+    height: 250px;
+    margin:5px;
+}
+.left_content .content .info h3{
+    color: greenyellow;
+    font-size: 24px;
+    text-align: center;
+}
+.left_content .content .info p{
+    color: #fff;
+    font-size: 18px;
+}
+.left_content .content .info  .cantidad_prod{
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    bottom: -10px; /* Ajusta este valor según la separación deseada */
+}
+/* Botones agregar o restar cantidad */
+.left_content .content .info  .cantidad_prod a{
+    color: rgb(56, 146, 206);
+    font-size: 24px;
+    margin: 0 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 5px;
+    text-decoration: none;
+}
+
+.left_content .content .info  .cantidad_prod a:hover{
+    color: greenyellow;
+    transform: scale(1.4);
+    transition: 0.5s ease 0s;
+
+}
+
+/* Boton eliminar producto */
+.left_content .content .info .btn_del{
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    top: 0;
+    right: 0; 
+    color:#fff;
+    font-size: 18px;
+}
+.left_content .content .info .btn_del:hover{
+    color: red;
+    border-radius: 5px;
+    cursor: pointer;
+    transform:scale(1.5);
+    transition: 0.5s ease 0s;
+}
+
+/* Cantidad de productos y precio total por cantidad */
+.left_content .content .total_cantidad{
+    width: 130px;
+    margin:10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+   
+    
+}
+.left_content .content .total_cantidad p{
+    color: rgb(103, 201, 231);
+    font-size: 18px;
+    text-align: center;
+    word-wrap: break-word; /* Romper palabras largas */
+    max-width: 100%; /* Limitar el ancho al 100% del contenedor */
+}
+
+
+/* Contenido derecho */
+.right_content{
+    display: flex;
+    position: relative;
+    margin: 10px;
+    bottom: 100px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    height: 270px;
+    background: rgba(255, 255, 255, 0.21);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8.2px);
+    -webkit-backdrop-filter: blur(8.2px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    
+}
+.right_content h3{
+    color: greenyellow;
+    position: absolute;
+    font-size: 24px;
+    text-align: center;
+    font-weight: bold;
+    top: 10;
+}
+.right_content p ion-icon{
+    color: greenyellow;
+    font-size: 24px;
+    margin: 0 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 5px;
+    text-decoration: none;
+}
+.right_content p{
+    color: #fff;
+    font-size: 22px;
+    text-align: center;
+    margin: 10px;
+}
+/* Botones de vaciar carro y continuar compra */
+.right_content .btns{
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    bottom: -10px; /* Ajusta este valor según la separación deseada */
+    right: 0;
+    left: 0;
+}
+.right_content .btns .vaciar_carro{
+    color: red;
+    font-size: 26px;
+    margin: 0 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 5px;
+    text-decoration: none;
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    bottom: -5;
+    left: -10;
+}
+
+/*Boton continuar compra*/
+.right_content .btns .continuar{
+    color: greenyellow;
+    text-decoration: none;
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    bottom: 0;
+    right: 0;
+   
 }

@@ -42,12 +42,19 @@ class Carrito:
         for key, value in self.carro.items():
             if key == str(producto.id):
                 value["cantidad"] -= 1
-                if value["cantidad"] < 1:
+                if value["cantidad"] == 0:
                     self.eliminar(producto)
                 break
         self.guardar_carro()
         print("Entro a Restar Producto")
         
+    def sumar_producto(self, producto):
+        for key, value in self.carro.items():
+            if key == str(producto.id):
+                value["cantidad"] += 1
+                
+        self.guardar_carro()
+        print("Entro a Restar Producto")   
     def vaciar_carro(self):
         self.session["carro"] = {}
         self.session.modified = True

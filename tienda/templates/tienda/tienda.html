@@ -25,13 +25,13 @@
                 {% endfor %}
             </select>
         </div>
-        
-        <div class="carrito">
+        {% include 'tienda/widgets/widget_icon_carro.html' %}
+        <!-- <div class="carrito">
             <a href="{% url 'Carrito' %}">
                 <ion-icon name="cart-outline"></ion-icon>
                 <span>{{importe_total_carro}}</span>
             </a>
-        </div>
+        </div> -->
 
 
         <form method="get" action="{% url 'buscar' %}">
@@ -64,7 +64,12 @@
                     </div>
                 </div>
                 <!-- <button>Agregar al carrito</button> -->
-                <a href="{% url 'carrito:agregar' producto.id %}" class="btn_card">Agregar al carrito</a>
+             
+                {% if producto.disponibilidad %}
+                    <a href="{% url 'carrito:agregar' producto.id %}" class="btn_card">Agregar al carrito</a>
+                {% else %}
+                    <a href="#" class="btn_card">No disponible</a>
+                {% endif %}
             </div>
             
         {% endfor %}
