@@ -58,8 +58,13 @@ def view_carrito(request):
     for key, value in elementos_carro.items():
         value['total'] = float(value['precio']) * int(value['cantidad'])
         total_carro += float(value['total'])
-
-    return render(request, 'tienda/carrito.html',{'elementos_carro':elementos_carro,'context':context,'total_carro':total_carro})
+    categorias = CategoriaProducto.objects.all()
+    return render(request, 'tienda/carrito.html',{
+        'elementos_carro':elementos_carro,
+        'context':context,
+        'total_carro':total_carro,
+        'categorias':categorias,
+        })
 
 
 def categoria_producto(request, categoria_id):
