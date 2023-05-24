@@ -1,0 +1,34 @@
+.noCategory{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    margin: auto;
+}
+.no-result{
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    color: #fff;
+}
+.backTienda{
+    color: greenyellow;
+    text-decoration: none;
+    font-size: 18px;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid greenyellow;
+    transition: 0.5s ease 0s;
+}
+
+.backTienda:hover{
+    text-decoration: none;
+    color: #000;
+    background: greenyellow;
+    transform: scale(1.2);
+    transition: 0.5s ease 0s;
+    
+}

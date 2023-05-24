@@ -1,0 +1,57 @@
+{% extends '../webProject_app/base.html' %} <!-- hereda de la plantilla base.html-->
+
+
+{% load static %}
+
+{% block css_file %}
+
+{{ block.super }}
+    <link href="{% static context.tienda %}" rel="stylesheet">
+    <link href="{% static context.subNav %}" rel="stylesheet">
+    <link href="{% static context.producto %}" rel="stylesheet">
+    <link href="{% static context.no_categoria %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+
+{% include 'tienda/widgets/widget_subNav.html' %}
+<h2 class="titulo_cat_filtro">Categoría: {{categoria.nombre}}</h2>
+  
+    <div class="productos_container">
+    {% if productos %}
+        {% for producto in productos %}
+            <div class="product-card">
+                <div class="product-header">
+                    <img src="{{ producto.imagen.url }}" alt="Nombre del producto">
+                    <a href="{% url 'view_product' producto.id %}"class='viewproduct'><h3>{{ producto.nombre }}</h3></a>
+                   
+                </div>
+                <!-- <p>{{ producto.descripcion }}</p> -->
+                <div class="product-body">
+                    <p>${{ producto.precio }}</p>
+                    <div class="cat-stock">
+                        <a href="{% url 'Categoria' producto.categoria.id %}" class="postcategory"><span class="product-category"> {{ producto.categoria }} </span></a>
+                        {% if producto.disponibilidad %}
+                            <span class='stock'> Stock <ion-icon name="checkmark-circle-outline"></ion-icon> </span>
+                        {% else %}
+                            <span class='no-stock'> Stock <ion-icon name="close-circle-outline"></ion-icon></span>
+                        {% endif %}
+                    </div>
+                </div>
+             
+                {% if producto.disponibilidad %}
+                    <a href="{% url 'carrito:agregar' producto.id %}" class="btn_card">Agregar al carrito</a>
+                {% else %}
+                    <a href="#" class="btn_card">No disponible</a>
+                {% endif %}
+            </div>
+            
+        {% endfor %}
+    </div>
+    {% else %}
+        <div class="noCategory">
+            <h2 class="no-result">No hay productos en esta categoría</h2>
+            <a class="backTienda" href="{% url 'Tienda' %}">Ir a la tienda</a>
+        </div>
+    {% endif %}
+{% endblock %}

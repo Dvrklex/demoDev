@@ -137,3 +137,9 @@ filter: brightness(100%);
     border: greenyellow solid 2px;
     color: greenyellow;
 }
+
+.query_search{
+    color: #fff;
+    font-size: 30px;
+    text-align: center;
+}

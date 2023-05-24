@@ -12,34 +12,10 @@
 {% endblock %}
 
 {% block content %}
-    <div class="sub_menu">
-        <div class="dropdown">
-            <select onchange="location = this.value;">
-                <option>Filtrar categorías...</option>
-                {% for categoria in categorias %}
-                    {% if categoria.id == categoria_id %}
-                        <option value="{% url 'categoria' categoria.id %}" selected>{{ categoria.nombre }}</option>
-                    {% else %}
-                        <option value="{% url 'categoria' categoria.id %}">{{ categoria.nombre }}</option>
-                    {% endif %}
-                {% endfor %}
-            </select>
-        </div>
-        
-        <div class="carrito">
-            <a href="#">
-                <ion-icon name="cart-outline"></ion-icon>
-                <span>{{importe_total_carro}}</span>
-            </a>
-        </div>
 
+    {% include 'tienda/widgets/widget_subNav.html' %}
 
-        <form method="get" action="{% url 'buscar' %}">
-            <div class="search_bar">
-                <input type="search" name="search" id="search" placeholder="Buscar...">
-            </div>
-        </form>
-    </div>
+   
 
     <!-- <h1>{{ producto.nombre }}</h1> -->
     <div class="index_container">
@@ -58,7 +34,7 @@
                         <span><ion-icon name="shield-checkmark-outline"></ion-icon><strong>Compra protegida.</strong> Recibí el producto como esparabas o te devolvemos tu dinero.</span>
                     </div>
                     <div class="cat-stock">
-                        <a href="#" class="prod_categoria"><span class="product-category">{{ producto.categoria }} </span></a>
+                        <a href="{% url 'Categoria' producto.categoria.id %}" class="prod_categoria"><span class="product-category">{{ producto.categoria }} </span></a>
                         {% if producto.disponibilidad %}
                             <span class='stock'> Stock <ion-icon name="checkmark-circle-outline"></ion-icon> </span>
                         {% else %}

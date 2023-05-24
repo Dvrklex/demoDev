@@ -7,9 +7,19 @@
 
 {{ block.super }}
     <link href="{% static context.carrito %}" rel="stylesheet">
+    <link href="{% static context.subNav %}" rel="stylesheet">
+
 {% endblock %}
 
 {% block content %}
-
-    {% include 'tienda/widgets/widget_carro.html' %}
+    {% include 'tienda/widgets/widget_subNav.html' %}
+    {% if carrito %}
+        {% include 'tienda/widgets/widget_carro.html' %}
+    {% else %}
+        <div class="empty-cart">
+            <h2>Tu carrito está vacío.</h2>
+            <p>Por favor visita nuestra tienda para ver nuestros productos.</p>
+            <a href="{% url 'Tienda' %}">Ir a la tienda</a>
+        </div>
+    {% endif %}
 {% endblock %}

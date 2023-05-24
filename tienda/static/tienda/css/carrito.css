@@ -216,3 +216,47 @@
     right: 0;
    
 }
+
+
+/* Carrito vacio */
+.empty-cart{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    margin: auto;
+    margin-top: 75px;
+
+}
+.empty-cart h2{
+    color: greenyellow;
+    font-size: 54px;
+    text-align: center;
+    font-weight: bold;
+    margin: 10px;
+}
+.empty-cart p{
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+    margin: 10px;
+}
+.empty-cart a {
+    color: greenyellow;
+    text-decoration: none;
+    font-size: 18px;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid greenyellow;
+    transition: 0.5s ease 0s;
+}
+
+.empty-cart a:hover{
+    color: #000;
+    background: greenyellow;
+    transform: scale(1.2);
+    transition: 0.5s ease 0s;
+}

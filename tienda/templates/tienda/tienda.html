@@ -12,35 +12,8 @@
 
 
 {% block content %}
-    <div class="sub_menu">
-        <div class="dropdown">
-            <select onchange="location = this.value;">
-                <option>Filtrar categorías...</option>
-                {% for categoria in categorias %}
-                    {% if categoria.id == categoria_id %}
-                        <option value="{% url 'categoria' categoria.id %}" selected>{{ categoria.nombre }}</option>
-                    {% else %}
-                        <option value="{% url 'categoria' categoria.id %}">{{ categoria.nombre }}</option>
-                    {% endif %}
-                {% endfor %}
-            </select>
-        </div>
-        {% include 'tienda/widgets/widget_icon_carro.html' %}
-        <!-- <div class="carrito">
-            <a href="{% url 'Carrito' %}">
-                <ion-icon name="cart-outline"></ion-icon>
-                <span>{{importe_total_carro}}</span>
-            </a>
-        </div> -->
-
-
-        <form method="get" action="{% url 'buscar' %}">
-            <div class="search_bar">
-                <input type="search" name="search" id="search" placeholder="Buscar...">
-            </div>
-        </form>
-    </div>
-
+    {% include 'tienda/widgets/widget_subNav.html' %}
+    
 
     <div class="productos_container">
         {% for producto in productos %}
@@ -51,11 +24,12 @@
                     <a href="{% url 'view_product' producto.id %}"class='viewproduct'><h3>{{ producto.nombre }}</h3></a>
                    
                 </div>
-                <!-- <p>{{ producto.descripcion }}</p> -->
                 <div class="product-body">
                     <p>${{ producto.precio }}</p>
                     <div class="cat-stock">
-                        <a href="#" class="postcategory"><span class="product-category"> {{ producto.categoria }} </span></a>
+                        <a href="{% url 'Categoria' producto.categoria.id %}" class="postcategory">
+                            <span class="product-category"> {{ producto.categoria }} </span>
+                        </a>
                         {% if producto.disponibilidad %}
                             <span class='stock'> Stock <ion-icon name="checkmark-circle-outline"></ion-icon> </span>
                         {% else %}
