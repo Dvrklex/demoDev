@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'contacto',
     'tienda',
     'carrito',
+    'autenticacion',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -136,6 +138,10 @@ STATICFILES_DIRS = [
 ]
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+
+#Cargar paquete crispy_forms en bootstrap
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 
 # Default primary key field type

@@ -1,0 +1,17 @@
+{% extends '../webProject_app/base.html' %}
+
+{% load static %} 
+
+{% block css_file %}
+{% endblock %}
+
+{% block content %}
+    <form method="POST" action="" style="display:grid;width:750px;height:auto;color:white;align-items:center;margin:auto">
+        {% csrf_token %}
+
+        {{ form }}
+
+
+        <button type="submit" class="btn btn-success">Registrarse</button>
+    </form>
+{% endblock %}

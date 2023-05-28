@@ -3,9 +3,10 @@
 def importe_total_carro(request):
     # total = 0
     cantidad = 0
-    if "carro" in request.session:
-        carro = request.session["carro"]
-        for key, value in carro.items():
-            # total += float(value['precio'])
-            cantidad += int(value["cantidad"])
+    if request.user.is_authenticated:
+        if "carro" in request.session:
+            carro = request.session["carro"]
+            for key, value in carro.items():
+                # total += float(value['precio'])
+                cantidad += int(value["cantidad"])
     return {'cantidad_productos':cantidad}
