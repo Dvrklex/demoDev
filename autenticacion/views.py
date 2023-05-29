@@ -27,4 +27,5 @@ class ViewRegistro(View):
             return render(request,'autenticacion/registro.html',{"form":form})
         
         
-        
+def login_view(request):
+    return render(request,'autenticacion/login.html')
