@@ -8,7 +8,6 @@ from django.contrib.auth.forms import UserCreationForm
 
 class ViewRegistro(View):
     
-    
     def get(self,request):
         form = UserCreationForm()
         return render(request,'autenticacion/registro.html',{"form":form})
@@ -26,6 +25,15 @@ class ViewRegistro(View):
                 messages.error(request, form.error_messages[msg])
             return render(request,'autenticacion/registro.html',{"form":form})
         
-        
+
+       
 def login_view(request):
-    return render(request,'autenticacion/login.html')
+    view_name= 'Login'
+    context = {'css_file':"autenticacion/css/login.css"}
+    if request.method == 'POST':
+        if form.is_valid():
+            datos = form.cleaned_data
+            username = request.POST.get("username")
+            password = request.POST.get("password")
+
+    return render(request,'autenticacion/login.html',{"view_name":view_name,"context":context})

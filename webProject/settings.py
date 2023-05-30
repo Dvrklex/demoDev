@@ -134,6 +134,7 @@ STATICFILES_DIRS = [
     './contacto/static/',
     './tienda/static/',
     './carrito/static/',
+    './autenticacion/static/',
     
 ]
 MEDIA_URL = '/media/'
