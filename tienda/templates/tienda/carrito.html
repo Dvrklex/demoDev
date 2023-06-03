@@ -13,6 +13,7 @@
 
 {% block content %}
     {% include 'tienda/widgets/widget_subNav.html' %}
+    {% if request.user.is_authenticated %}
         {% if total_carro %}
             {% include 'tienda/widgets/widget_carro.html' %}
         {% else %}
@@ -21,6 +22,12 @@
                 <p>Por favor visita nuestra tienda para ver nuestros productos.</p>
                 <a href="{% url 'Tienda' %}">Ir a la tienda</a>
             </div>
+        {% endif %}
+    {% else %}
+        <div class="empty-cart">
+            <h2>Inicia sesión </h2>
+            <p>Por favor ingresa en tu cuenta para poder operar en la tienda.</p>
+            <a href="{% url 'Login' %}">Iniciar sesión</a>
+        </div>
     {% endif %}
-    
 {% endblock %}

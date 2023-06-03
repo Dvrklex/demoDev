@@ -9,4 +9,6 @@ def importe_total_carro(request):
             for key, value in carro.items():
                 # total += float(value['precio'])
                 cantidad += int(value["cantidad"])
+    # else: 
+    #     cantidad="Debes hacer login"
     return {'cantidad_productos':cantidad}

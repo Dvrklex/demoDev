@@ -3,15 +3,72 @@
 {% load static %} 
 
 {% block css_file %}
+{{ block.super }}
+<link href="{% static context.register %}" rel="stylesheet">
 {% endblock %}
 
 {% block content %}
-    <form method="POST" action="" style="display:grid;width:750px;height:auto;color:white;align-items:center;margin:auto">
+<style>
+    form .alert{
+        margin:20px auto;
+        width: 100%;
+    }
+</style>
+    <form  method="POST" action="">
         {% csrf_token %}
+        <h2>Registrate</h2>
+        <div class="input-box">
+            <!-- <label for="{{ form.username.id_for_label }}">{{ form.username.label }}</label> -->
+            <input type="{{ form.username.field.widget.input_type }}"
+                   name="{{ form.username.html_name }}"
+                   id="{{ form.username.auto_id }}"
+                   class="{{ form.username.field.widget.attrs.class }}"
+                   {% if form.username.value %}value="{{ form.username.value }}"{% endif %}
+                   {% if form.username.field.required %}required{% endif %}
+                   placeholder="{{ form.username.label }}">
+            {% if form.errors.username %}
+                <div class="alert alert-danger" role="alert">
+                    <span class="error">{{ form.errors.username }}</span>
+                </div>
+            {% endif %}
+        </div>
+        
+        <div class="input-box">
+            <!-- <label for="{{ form.password1.id_for_label }}">{{ form.password1.label }}</label> -->
+            <input type="{{ form.password1.field.widget.input_type }}"
+                   name="{{ form.password1.html_name }}"
+                   id="{{ form.password1.auto_id }}"
+                   class="{{ form.password1.field.widget.attrs.class }}"
+                   {% if form.password1.value %}value="{{ form.password1.value }}"{% endif %}
+                   {% if form.password1.field.required %}required{% endif %}
+                   placeholder="{{ form.password1.label }}">
+            {% if form.errors.password1 %}
+                <div class="alert alert-danger" role="alert">
+                    <span class="error">{{ form.errors.password1 }}</span>
+                </div>
+            {% endif %}
+        </div>
+        
+        <div class="input-box">
+            <!-- <label for="{{ form.password2.id_for_label }}">{{ form.password2.label }}</label> -->
+            <input type="{{ form.password2.field.widget.input_type }}"
+                   name="{{ form.password2.html_name }}"
+                   id="{{ form.password2.auto_id }}"
+                   class="{{ form.password2.field.widget.attrs.class }}"
+                   {% if form.password2.value %}value="{{ form.password2.value }}"{% endif %}
+                   {% if form.password2.field.required %}required{% endif %}
+                   placeholder="{{ form.password2.label }}">
+            {% if form.errors.password2 %}
+                <div class="alert alert-danger" role="alert">
+                    <span class="error">{{ form.errors.password2 }}</span>
+                </div>
+            {% endif %}
+        </div>
+        
+        <button type="submit" >Registrarse</button>
 
-        {{ form }}
-
-
-        <button type="submit" class="btn btn-success">Registrarse</button>
+        <div class="log-cont">
+            <p>¿Ya tienes una cuenta? <a href="{% url 'Login' %}">Inicia sesión</a></p>
+        </div>
     </form>
 {% endblock %}

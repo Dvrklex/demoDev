@@ -10,8 +10,12 @@
   
   .log .dropdown {
     position: relative;
+    display: flex;
   }
-  
+  .dropdown p{
+    color:greenyellow;
+    margin: 10px;
+  }
   .log .dropdown-content {
     display: none;
     position: absolute;
@@ -67,3 +71,4 @@
     fill: greenyellow;
   }
   
+

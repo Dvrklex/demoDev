@@ -3,18 +3,46 @@
 {% load static %} 
 
 {% block css_file %}
-{{ block.super }}
+    {{ block.super }}
     <link href="{% static context.css_file %}" rel="stylesheet">
 {% endblock %}
 
 {% block content %}
-    <div class="container">
-        <form  method="POST" class="formLogin"> 
+    <form method="POST" action="">
         {% csrf_token %}
-                <span class="text-center"><h3 data-text="Login">Login</h3></span>
-                <input type="text" placeholder="Username" required>
-                <input type="password" placeholder="Password" required>
-                <input type="submit" class="btn" value="Log in">
-        </form>
-    </div>
+        <h2>Inicia Sesión</h2>
+        <div class="input-box">
+            <input type="{{ form.username.field.widget.input_type }}"
+                   name="{{ form.username.html_name }}"
+                   id="{{ form.username.auto_id }}"
+                   class="{{ form.username.field.widget.attrs.class }}"
+                   {% if form.username.value %}value="{{ form.username.value }}"{% endif %}
+                   {% if form.username.field.required %}required{% endif %}
+                   placeholder="Nombre de usuario">
+        </div>
+        
+        <div class="input-box">
+            <input type="{{ form.password.field.widget.input_type }}"
+                   name="{{ form.password.html_name }}"
+                   id="{{ form.password.auto_id }}"
+                   class="{{ form.password.field.widget.attrs.class }}"
+                   {% if form.password.value %}value="{{ form.password.value }}"{% endif %}
+                   {% if form.password.field.required %}required{% endif %}
+                   placeholder="Contraseña">
+        </div>
+        
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+        
+        <button type="submit">Iniciar sesión</button>
+
+        <div class="log-cont">
+            <p>¿No tienes una cuenta? <a href="{% url 'Auth' %}">Registrate</a></p>
+        </div>
+    </form>
 {% endblock %}

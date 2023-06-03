@@ -2,11 +2,13 @@ class Carrito:
     def __init__(self, request):
         self.request = request
         self.session = request.session
-        carro = self.session.get("carro", {})
+        carro = self.session.get("carro")
         
         if not carro:
+            print('usuario logeado')
             self.carro = self.session['carro'] = {}
         else:
+            print('usuario SIN LOGEAR')
             self.carro = carro
             
     def guardar_carro(self):
