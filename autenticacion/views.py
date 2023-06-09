@@ -9,8 +9,8 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 class ViewRegistro(View):
     
     def get(self,request):
-        form = UserCreationForm()
         context = {"register":"autenticacion/css/register.css"}
+        form = UserCreationForm()
         return render(request,'autenticacion/registro.html',{"form":form,"context":context})
     
     def post(self,request):
@@ -22,9 +22,9 @@ class ViewRegistro(View):
             
             return redirect('Home')
         else: 
+            context = {"register":"autenticacion/css/register.css"}
             for msg in form.error_messages:
                 messages.error(request, form.error_messages[msg])
-                context = {"register":"autenticacion/css/register.css"}
             return render(request,'autenticacion/registro.html',{"form":form,"context":context})
         
 
@@ -52,3 +52,9 @@ def login_view(request):
         else:
             messages.error(request,"Información incorrecta")
     return render(request,'autenticacion/login.html',{"view_name":view_name,"context":context,"form":form})
+
+
+def perfil_usuario(request):
+    view_name = 'Profile'
+
+    return render(request,'autenticacion/perfil.html',{"view_name":view_name})

@@ -8,6 +8,7 @@ urlpatterns = [
     path('', ViewRegistro.as_view(), name='Auth'),
     path('login', views.login_view, name='Login'),
     path('logout', views.cerrar_sesion, name='Logout'),
+    path('profile', views.perfil_usuario, name='Profile')
    
 ]
 
