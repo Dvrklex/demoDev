@@ -54,7 +54,3 @@ def login_view(request):
     return render(request,'autenticacion/login.html',{"view_name":view_name,"context":context,"form":form})
 
 
-def perfil_usuario(request):
-    view_name = 'Profile'
-
-    return render(request,'autenticacion/perfil.html',{"view_name":view_name})

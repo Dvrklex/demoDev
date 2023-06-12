@@ -10,26 +10,9 @@
 {% endblock %}
 
 {% block content %}
-    <div class="sub_menu">
-        <div class="dropdown">
-            <select onchange="location = this.value;">
-                <option value="">Filtrar categorías...</option>
-                <option value="{% url 'Blog' %}">Ver todas</option>
-                {% for categoria in categorias %}
-                    {% if categoria.id == categoria_id %}
-                        <option value="{% url 'categoria' categoria.id %}" selected>{{ categoria.nombre }}</option>
-                    {% else %}
-                        <option value="{% url 'categoria' categoria.id %}">{{ categoria.nombre }}</option>
-                    {% endif %}
-                {% endfor %}
-            </select>
-        </div>
-        <form method="get" action="{% url 'buscar' %}">
-            <div class="search_bar">
-                <input type="search" name="search" id="search" placeholder="Buscar...">
-            </div>
-        </form>
-    </div>
+{% include 'blog/widgets/subMenu_widget.html' %}
+
+      
     <!-- Ver posteo completo -->
     <div class="post_index">
         <div class="post_index_header">

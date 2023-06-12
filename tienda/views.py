@@ -16,7 +16,6 @@ def tienda(request):
     
     productos = Producto.objects.all()
     categorias = CategoriaProducto.objects.all()
-    print('Categorias',categorias)
 
     return render(request, 'tienda/tienda.html',{
         'view_name': view_name,

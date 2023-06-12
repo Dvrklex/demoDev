@@ -1,5 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from blog.models import Post, Categoria
+from django.conf import settings
+
 # Create your views here.
 
 
@@ -70,3 +72,44 @@ def view_post(request, post_id):
     post = Post.objects.get(id=post_id)
     categorias = Categoria.objects.all()
     return render(request, 'blog/post.html', {'view_name':view_name,"context":context ,'post': post,'post_id':post_id,'categorias': categorias})
+
+
+#Create post 
+def create_post(request):
+    view_name = 'Create_Post'
+    context = {
+        "css_file": "blog/css/create_post.css",
+    }
+    categorias = Categoria.objects.all()
+    
+    if request.method == 'POST':
+        titulo = request.POST.get('titulo')
+        categoria_id = request.POST.get('categoria')
+        contenido = request.POST.get('contenido')
+        categoria_id = request.POST.get('categoria')
+        categoria = Categoria.objects.get(id=categoria_id)
+        imagen = request.FILES.get('imagen')
+        autor = request.user
+
+        if imagen and imagen.size > settings.MAX_UPLOAD_SIZE:
+            error_message = 'La imagen es demasiado grande. El tamaño máximo permitido es de 5 MB.'
+            return render(request, 'blog/create_post.html', {
+                'view_name': view_name,
+                'context': context,
+                'categorias': categorias,
+                'error_message': error_message,
+                'titulo': titulo,
+                'categoria_id': int(categoria_id),
+                'contenido': contenido
+            })
+        else:
+            post = Post(titulo=titulo, contenido=contenido, imagen=imagen, autor=autor)
+            post.save()
+            post.categoria.set([categoria])
+            return redirect('Blog')
+
+    return render(request, 'blog/create_post.html', {
+        'view_name': view_name,
+        'context': context,
+        'categorias': categorias
+    })

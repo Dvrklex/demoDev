@@ -17,8 +17,8 @@ def home(request):
         }
     
     latest_posts = Post.objects.all().order_by('-created')[:6]
-    for post in latest_posts:
-        print(post.titulo)
+    # for post in latest_posts:
+    #     print(post.titulo)
     return render(request, 'webProject_app/home.html',{'view_name': view_name,"context":context , "latest_posts":latest_posts})
 
 
