@@ -1,0 +1,74 @@
+{% extends '../webProject_app/base.html' %}
+<!-- hereda de la plantilla base.html-->
+
+{% load static %} 
+
+{% block css_file %}
+{{ block.super }}
+    <link href="{% static context.css_file %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+
+
+<div class="container">
+  <div class="content">
+    <div class="left-side">
+      <div class="details">
+        <ion-icon name="warning-outline"></ion-icon>
+        <div class="topic">IMPORTANTE</div>
+        <p style="color:white">Esta web es un simple proyecto creado con objetivos educativos. Los datos 
+            ingresados en este formulario <strong>NO</strong> se guardaran en ninguna base de datos, es solo a modo de práctica.
+        </p>
+    </div>
+    
+      <div class="details">
+        <ion-icon name="link-outline"></ion-icon>
+        <div class="topic">Repositorio del código</div>
+        <div class="text-one"><a style="text-decoration:none;color:white"href="https://github.com/Dvrklex/django_webProject">DemoDEV</a></div>
+      </div>
+    </div>
+    <div class="right-side">
+      <div class="topic-text">Formulario de Pedido</div>
+      <p>
+        Completa el formulario con tus datos para finalizar el pedido. Luego, recibirás un email de confirmación con los detalles del pedido.
+      </p>
+
+      {% if "valid" in request.GET %}
+        <div class="alert alert-success valid-message-form" role="alert" style="width:90%">
+          <strong>¡Tu mensaje ha sido enviado!</strong> Nos pondremos en contacto a la brevedad.
+        </div>
+      {% elif "invalid" in request.GET %}
+      <div class="alert alert-warning valid-message-form" role="alert" style="width:90%">
+      <strong>¡OPS! Ha ocurrido un error.</strong> Por favor, revisa la información de los campos para poder enviar tu consulta.
+    </div>
+    {% elif "incomplete" in request.GET %}
+        <div class="alert alert-danger valid-message-form" role="alert" style="width:90%">
+            <strong>Ha ocurrido un error al enviar tu consulta.</strong> Por favor, intenta nuevamente más tarde.
+        </div>
+      {% endif %}
+
+      <form action="/pedidos/" method="POST" class="formContact"> 
+        {% csrf_token %}
+        <!-- {{ form.as_div }} -->
+        <div class="input-box ">
+          {{ form.nombre }}
+          {{ form.apellido }}
+        </div>
+      
+        <div class="input-box " >
+            {{ form.calle }}
+            {{ form.numero }}
+        </div>
+        <div class="input-box ">
+            {{ form.tarjeta }}
+            {{ form.cvv }}
+        </div>
+        <div class="button">
+          <input type="submit" value="Finalizar pedido" />
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
