@@ -17,6 +17,7 @@
     <form  method="POST" action="">
         {% csrf_token %}
         <h2>Registrate</h2>
+        
         <div class="input-box">
             <!-- <label for="{{ form.username.id_for_label }}">{{ form.username.label }}</label> -->
             <input type="{{ form.username.field.widget.input_type }}"
@@ -32,7 +33,51 @@
                 </div>
             {% endif %}
         </div>
-        
+        <div class="input-box">
+            <!-- <label for="{{ form.username.id_for_label }}">{{ form.username.label }}</label> -->
+            <input type="{{ form.email.field.widget.input_type }}"
+                   name="{{ form.email.html_name }}"
+                   id="{{ form.email.auto_id }}"
+                   class="{{ form.email.field.widget.attrs.class }}"
+                   {% if form.email.value %}value="{{ form.email.value }}"{% endif %}
+                   {% if form.email.field.required %}required{% endif %}
+                   placeholder="{{ form.email.label }}">
+            {% if form.errors.email %}
+                <div class="alert alert-danger" role="alert">
+                    <span class="error">{{ form.errors.email }}</span>
+                </div>
+            {% endif %}
+        </div>
+        <div class="input-box">
+            <!-- <label for="{{ form.username.id_for_label }}">{{ form.username.label }}</label> -->
+            <input type="{{ form.first_name.field.widget.input_type }}"
+                   name="{{ form.first_name.html_name }}"
+                   id="{{ form.first_name.auto_id }}"
+                   class="{{ form.first_name.field.widget.attrs.class }}"
+                   {% if form.first_name.value %}value="{{ form.first_name.value }}"{% endif %}
+                   {% if form.first_name.field.required %}required{% endif %}
+                   placeholder="{{ form.first_name.label }}">
+            {% if form.errors.first_name %}
+                <div class="alert alert-danger" role="alert">
+                    <span class="error">{{ form.errors.first_name }}</span>
+                </div>
+            {% endif %}
+        </div>
+        <div class="input-box">
+            <!-- <label for="{{ form.username.id_for_label }}">{{ form.username.label }}</label> -->
+            <input type="{{ form.last_name.field.widget.input_type }}"
+                   name="{{ form.last_name.html_name }}"
+                   id="{{ form.last_name.auto_id }}"
+                   class="{{ form.last_name.field.widget.attrs.class }}"
+                   {% if form.last_name.value %}value="{{ form.last_name.value }}"{% endif %}
+                   {% if form.last_name.field.required %}required{% endif %}
+                   placeholder="{{ form.last_name.label }}">
+            {% if form.errors.last_name %}
+                <div class="alert alert-danger" role="alert">
+                    <span class="error">{{ form.errors.last_name}}</span>
+                </div>
+            {% endif %}
+        </div>
         <div class="input-box">
             <!-- <label for="{{ form.password1.id_for_label }}">{{ form.password1.label }}</label> -->
             <input type="{{ form.password1.field.widget.input_type }}"

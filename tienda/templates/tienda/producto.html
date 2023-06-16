@@ -42,8 +42,8 @@
                         {% endif %}
                     </div>
                     <div class="btns">
-                        <a href="#" class="btn2">Agregar al carrito</a>
-                        <a href="#" class="btn1">Comprar ahora</a>
+                        <a href="{% url 'carrito:agregar' producto.id %}" class="btn2">Agregar al carrito</a>
+                        <!-- <a href="#" class="btn1">Comprar ahora</a> -->
                     </div>
 
                 </div>

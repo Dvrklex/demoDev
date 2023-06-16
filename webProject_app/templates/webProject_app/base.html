@@ -57,7 +57,7 @@
             <ion-icon name="chevron-forward-outline"></ion-icon>
           </span>
           <ul>
-            <li class="list {% if request.path|slice:':8' == '/tienda/' %}active{% endif %}" data-url="{% url 'Tienda' %}">
+            <li class="list {% if request.path|slice:':8' == '/tienda/' or request.path|slice:'9' == '/pedidos/' %}active{% endif %}" data-url="{% url 'Tienda' %}">
               <a href="{% url 'Tienda' %}">
                   <span class="icon">
                     <ion-icon name="bag-handle-outline"></ion-icon>

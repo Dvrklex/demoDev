@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <style>
+            h2{
+                color:black;
+                font-size: 18px;
+            }
+            h3{
+                font-size: 14px;
+            }
+            
+            li{
+                font-size: 14px;
+            }
+            span{
+                color: grey;
+                font-size: 14px;
+                font-style: italic;
+            }
+            span a{
+                color: greenyellow;
+                font-style: italic;
+                text-decoration: none;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Hola <strong>{{ nombre_usuario }}</strong> <br/></h1>
+        <p>Tu pedido ha sido confirmado.</p>
+        <h3>N° de Pedido: {{ pedido.id }} <br/></h3>
+        <h3>Email del usuario: {{ email_usuario }} <br/></h3>
+        <h3>Fecha del pedido: {{ pedido.creado }} <br/></h3>
+        Detalle del pedido: <br/>
+        {% for linea in lineas_pedido %}
+            <li>{{linea}}</li>
+        {% endfor %}
+        
+
+        <span>¡Gracias por utilizar nuestro servicio!<br/></span>
+        <span>Demo DEV 🧡 © <a href="github.com/Dvrklex">Dvrklex</a></span>
+    </body>
+</html>

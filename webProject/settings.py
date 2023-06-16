@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'carrito',
     'autenticacion',
     'crispy_forms',
+    'pedidos',
 ]
 
 MIDDLEWARE = [
@@ -135,6 +136,7 @@ STATICFILES_DIRS = [
     './tienda/static/',
     './carrito/static/',
     './autenticacion/static/',
+    './pedidos/static/',
     
 ]
 MEDIA_URL = '/media/'

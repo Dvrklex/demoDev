@@ -29,7 +29,7 @@
             <p>${{total_carro}}</p>
             <div class="btns">
                 <a class="vaciar_carro" href="{% url 'carrito:limpiar' %}"><ion-icon name="trash-outline"></ion-icon></a>
-                <a class="continuar" href="#">Continuar compra</a>
+                <a class="continuar" href="{% url 'formulario_pedidos' %}">Continuar compra</a>
             </div>
             <div>
                 <a href="{% url 'Tienda' %}" class="backTienda">Seguir comprando</a>

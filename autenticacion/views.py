@@ -3,18 +3,21 @@ from django.views.generic import View
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.contrib.auth.models import User
+from .forms import CustomUserCreationForm
 
 # Create your views here.
+
 
 class ViewRegistro(View):
     
     def get(self,request):
         context = {"register":"autenticacion/css/register.css"}
-        form = UserCreationForm()
+        form = CustomUserCreationForm()  # Utiliza el formulario personalizado
         return render(request,'autenticacion/registro.html',{"form":form,"context":context})
     
     def post(self,request):
-        form = UserCreationForm(request.POST)
+        form = CustomUserCreationForm(request.POST)  # Utiliza el formulario personalizado
         
         if form.is_valid():
             usuario = form.save()
@@ -26,7 +29,7 @@ class ViewRegistro(View):
             for msg in form.error_messages:
                 messages.error(request, form.error_messages[msg])
             return render(request,'autenticacion/registro.html',{"form":form,"context":context})
-        
+      
 
 
 

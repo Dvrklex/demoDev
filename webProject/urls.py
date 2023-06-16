@@ -25,4 +25,5 @@ urlpatterns = [
     path('tienda/',include('tienda.urls')),
     path('carrito/',include('carrito.urls')),
     path('auth/',include('autenticacion.urls')),
+    path('pedidos/',include('pedidos.urls')),
 ]

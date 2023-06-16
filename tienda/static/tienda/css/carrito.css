@@ -226,8 +226,7 @@
     flex-direction: column;
     width: 100%;
     height: auto;
-    margin: auto;
-    margin-top: 75px;
+    margin: 40px auto;
 
 }
 .empty-cart h2{
