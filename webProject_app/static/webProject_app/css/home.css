@@ -3,18 +3,30 @@
 /* Introduccions */
 .intro {
     position: relative;
+    
   }
+
+.intro-text{
+  background: rgba(0, 225, 255, 0.13);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(6.5px);
+-webkit-backdrop-filter: blur(6.5px);
+border: 1px solid rgba(0, 225, 255, 0.3);
+}
   
   @media (min-width: 992px) {
     .intro .intro-img {
       width: 65%;
       float: left;
+      margin: 60px;
+      margin-left: -4px;
+  
     }
     .intro .intro-text {
       left: 600;
       width: 60%;
       margin-top: 3rem;
-      background-color: #14213D;
       color: cornsilk;
       position: absolute;
     }

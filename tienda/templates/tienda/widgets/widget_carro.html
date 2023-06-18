@@ -28,11 +28,11 @@
             <p>Importe total</p>
             <p>${{total_carro}}</p>
             <div class="btns">
+                <a href="{% url 'Tienda' %}" class="backTienda"><ion-icon name="arrow-back-circle-outline"></ion-icon></a>
                 <a class="vaciar_carro" href="{% url 'carrito:limpiar' %}"><ion-icon name="trash-outline"></ion-icon></a>
-                <a class="continuar" href="{% url 'formulario_pedidos' %}">Continuar compra</a>
+                <a class="continuar" href="{% url 'formulario_pedidos' %}">Continuar &nbsp; <ion-icon name="arrow-forward-outline"></ion-icon></a>
             </div>
             <div>
-                <a href="{% url 'Tienda' %}" class="backTienda">Seguir comprando</a>
             </div>
         </div>
     </div>
